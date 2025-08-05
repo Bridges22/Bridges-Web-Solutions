@@ -179,7 +179,7 @@ export default function Footer() {
                 >
                   <i className="ri-phone-line text-cyan-400"></i>
                 </div>
-                <span>+254 104 613770</span>
+                <span>+254 705784274</span>
               </div>
               
               <div className="flex items-center gap-2 text-sm text-gray-400">
