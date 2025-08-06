@@ -16,11 +16,11 @@ export default function PortfolioDetail({ projectId }: PortfolioDetailProps) {
     '1': {
       title: 'Local Restaurant Chain',
       category: 'Restaurant Website',
-      client: 'Rodriguez Family Restaurant',
+      client: 'Thyme Restaurant',
       timeline: '3 weeks',
       budget: 'Ksh 72,000',
       image: 'https://about-thyme.com/wp-content/uploads/2021/04/home-slide-1.jpg',
-      challenge: 'Rodriguez Family Restaurant was a successful local chain with three locations, but they had no online presence. They were losing customers to competitors who offered online ordering and delivery through apps like DoorDash and Uber Eats. The family wanted to maintain control over their customer relationships and reduce commission fees.',
+      challenge: 'Thyme Restaurant was a successful local chain with three locations, but they had no online presence. They were losing customers to competitors who offered online ordering and delivery through apps like Glovo, Java House, Uber Eats etc. The Client wanted to maintain control over their customer relationships and reduce commission fees.',
       solution: 'We built a comprehensive restaurant website featuring an integrated online ordering system, table reservation booking, digital menu with high-quality food photography, customer review system, and mobile-first responsive design. The site included payment processing, order management, and customer data collection.',
       results: [
         '300% increase in online orders within 3 months',

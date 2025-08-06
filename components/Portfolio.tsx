@@ -10,6 +10,7 @@ export default function Portfolio() {
       title: 'Local Restaurant Chain',
       category: 'Restaurant Website',
       description: 'Increased online orders by 300% with mobile-first design and integrated ordering system.',
+       url: 'https://about-thyme.com/',
       image: 'https://about-thyme.com/wp-content/uploads/2021/04/home-slide-1.jpg',
       challenge: 'Client had no online presence and was losing customers to competitors',
       solution: 'Built responsive site with online menu, ordering system, and reservation booking',
@@ -21,6 +22,7 @@ export default function Portfolio() {
       title: 'Fitness Studio Network',
       category: 'Service Business',
       description: 'Streamlined class bookings and memberships with custom booking system and member portal.',
+       url: 'https://www.mom3ntum.com/',
       image: 'https://www.mom3ntum.com/assets/images/6.webp',
       challenge: 'Manual booking system was limiting growth and frustrating customers',
       solution: 'Custom booking platform with member portal and automated scheduling',
@@ -32,12 +34,13 @@ export default function Portfolio() {
       title: 'E-commerce Boutique',
       category: 'Online Store',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
+       url: 'https://boutique.co.ke/',
       image: 'https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/528745276_1330473711976731_84290242776151643_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEVLE1ffVNaslIXHFCk4VzvjKVr1cKf9AmMpWvVwp_0CZUOyLGkmG5pyBH0eAKGyjIJu3Mw80ay2xyIrZFIOjAf&_nc_ohc=7wsSlUSy_voQ7kNvwGBktXa&_nc_oc=AdnUbXGq42C8TjjbzunNTV7j3LKlnRis5lM3vB3LmpORjKkSqjQzdFXbQilVH3Fc4I4&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&_nc_gid=Huun1SaOUYSd666zVERwMQ&oh=00_AfUlRTuNMrEJ2z5v4h608Id1h_Xeg-AgRea98cqHUT4vBQ&oe=6897FF17',
       challenge: 'Physical store only, missing out on online sales opportunities',
       solution: 'Full e-commerce platform with inventory management and payment processing',
       result: '200% revenue increase with 60% of sales now coming from online',
       technologies: ['Shopify', 'React', 'Payment Gateway', 'Analytics']
-    }
+    },
   ];
 
   return (
@@ -99,15 +102,21 @@ export default function Portfolio() {
                 
                 {/* Demo Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div 
+                  <a 
+                  
+                  href={project.url} 
+                   target="_blank" 
+                  rel="noopener noreferrer"
                     className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300"
                     style={{
                       boxShadow: '0 0 20px rgba(34, 211, 238, 0.6)'
+
+
                     }}
                   >
                     <i className="ri-eye-line mr-2"></i>
                     View Demo
-                  </div>
+                  </a>
                 </div>
               </div>
               
