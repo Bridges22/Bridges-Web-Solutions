@@ -161,9 +161,10 @@ export default function Testimonials() {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-300 mb-6">Ready to join these success stories?</p>
+          <p className="text-gray-300 mb-6">Ready to join these success stories?</p> 
           <a 
-            href="https://wa.me/1234567890?text=Hi! I saw the testimonials and want to discuss building a professional website for my business."
+            href="https://wa.me/0104613770
+            ?text=Hi! I saw the testimonials and want to discuss building a professional website for my business."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl inline-flex items-center gap-2 whitespace-nowrap cursor-pointer"

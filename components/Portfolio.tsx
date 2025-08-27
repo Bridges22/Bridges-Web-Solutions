@@ -35,7 +35,7 @@ export default function Portfolio() {
       category: 'Online Store',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
        url: 'https://boutique.co.ke/',
-      image: 'https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/528745276_1330473711976731_84290242776151643_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEVLE1ffVNaslIXHFCk4VzvjKVr1cKf9AmMpWvVwp_0CZUOyLGkmG5pyBH0eAKGyjIJu3Mw80ay2xyIrZFIOjAf&_nc_ohc=7wsSlUSy_voQ7kNvwGBktXa&_nc_oc=AdnUbXGq42C8TjjbzunNTV7j3LKlnRis5lM3vB3LmpORjKkSqjQzdFXbQilVH3Fc4I4&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&_nc_gid=Huun1SaOUYSd666zVERwMQ&oh=00_AfUlRTuNMrEJ2z5v4h608Id1h_Xeg-AgRea98cqHUT4vBQ&oe=6897FF17',
+      image: 'https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/540699228_1349499100074192_1238377500984985720_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGdkad5CnNcIgtg_rutLjA3QV09Q5QPOuBBXT1DlA864D7ta7ruiAemgCP0mYm8flPuJAVYeP0g4WrKLv7C76S4&_nc_ohc=JLZAaCG-Zj4Q7kNvwHoI1KL&_nc_oc=AdlHgD5jkrZnW6B9CH5odrD3rOTxILapizBR8fGl0TDj5a-ZUtNAAsA2OWibF4OHRAs&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=7RY_x43EBFgguEa3HoUE5A&oh=00_AfVbHRiMKLTU4zThbXMC9i0e1dDOKTqbnphIva5UDKnvpg&oe=68B4AA08',
       challenge: 'Physical store only, missing out on online sales opportunities',
       solution: 'Full e-commerce platform with inventory management and payment processing',
       result: '200% revenue increase with 60% of sales now coming from online',
