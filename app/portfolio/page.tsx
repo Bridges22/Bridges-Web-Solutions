@@ -210,7 +210,7 @@ export default function PortfolioPage() {
                   
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {project.title}
-                  </h3>
+                  </h3> 
                   
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {project.description}
