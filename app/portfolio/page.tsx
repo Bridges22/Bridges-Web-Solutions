@@ -50,7 +50,7 @@ export default function PortfolioPage() {
       title: 'E-commerce Boutique',
       category: 'Online Store',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
-            image: 'https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/540699228_1349499100074192_1238377500984985720_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGdkad5CnNcIgtg_rutLjA3QV09Q5QPOuBBXT1DlA864D7ta7ruiAemgCP0mYm8flPuJAVYeP0g4WrKLv7C76S4&_nc_ohc=JLZAaCG-Zj4Q7kNvwHoI1KL&_nc_oc=AdlHgD5jkrZnW6B9CH5odrD3rOTxILapizBR8fGl0TDj5a-ZUtNAAsA2OWibF4OHRAs&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=7RY_x43EBFgguEa3HoUE5A&oh=00_AfVbHRiMKLTU4zThbXMC9i0e1dDOKTqbnphIva5UDKnvpg&oe=68B4AA08',
+      image: '/portfolio/Screenshot 2025-08-27 135112.png',
       technologies: ['Shopify', 'React', 'Payment Gateway', 'Analytics'],
       timeline: '5 weeks',
       client: 'Bloom Boutique',

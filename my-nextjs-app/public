@@ -1,0 +1,13 @@
+The `public` directory is intended for static assets such as images, fonts, and other files that can be served directly. You can create a subdirectory within `public` to store photos used in the project. Here’s how the contents of the `public` directory can be structured:
+
+- Create a subdirectory named `images` within the `public` directory to store the project images.
+
+The contents of the `public` directory will be as follows:
+
+public/
+└── images/
+    ├── about-thyme.jpg
+    ├── mom3ntum.jpg
+    └── boutique.jpg
+
+You can place the respective images in the `images` folder as per your project requirements.
