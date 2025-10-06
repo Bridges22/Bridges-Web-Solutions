@@ -35,7 +35,7 @@ export default function Portfolio() {
       category: 'Online Store',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
        url: 'https://boutique.co.ke/',
-      image: '/portfolio/Screenshot 2025-08-27 135112.png',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       challenge: 'Physical store only, missing out on online sales opportunities',
       solution: 'Full e-commerce platform with inventory management and payment processing',
       result: '200% revenue increase with 60% of sales now coming from online',

@@ -8,58 +8,31 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Maria Rodriguez',
-      business: 'Rodriguez Family Restaurant',
+      name: 'Amara Okafor',
+      business: 'Okafor Family Restaurant',
       location: 'Nairobi, Kenya',
-      avatar: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Hispanic%20woman%20business%20owner%2C%20confident%20smile%2C%20restaurant%20background%2C%20warm%20lighting%2C%20business%20casual%20attire%2C%20approachable%20and%20successful%20appearance&width=400&height=400&seq=testimonial-001&orientation=squarish',
+      avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'Our online orders tripled within two months of launching our new website. The mobile ordering system is so easy for our customers to use. Best investment we ever made for the restaurant.',
       rating: 5,
       result: '300% increase in online orders'
     },
     {
-      name: 'James Mitchell',
+      name: 'Marcus Johnson',
       business: 'FitCore Gym',
-      location: 'Denver, CO',
-      avatar: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20athletic%20man%20fitness%20business%20owner%2C%20confident%20expression%2C%20gym%20equipment%20in%20background%2C%20sporty%20business%20attire%2C%20strong%20and%20motivational%20presence&width=400&height=400&seq=testimonial-002&orientation=squarish',
+      location: 'Atlanta, GA, USA',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'The booking system completely transformed how we manage classes. Members love being able to book online, and we cut our admin time in half. Our membership has grown 150% since launch.',
       rating: 5,
       result: '150% membership growth'
     },
     {
-      name: 'Sarah Chen',
+      name: 'Sarah Johnson',
       business: 'Bloom Boutique',
-      location: 'Portland, OR',
-      avatar: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Asian%20woman%20boutique%20owner%2C%20elegant%20style%2C%20retail%20background%2C%20sophisticated%20business%20attire%2C%20friendly%20and%20professional%20demeanor&width=400&height=400&seq=testimonial-003&orientation=squarish',
+      location: 'Chicago, IL, USA',
+      avatar: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'Going from a physical store to online sales seemed impossible until I worked with Bridges. Now 60% of our revenue comes from our website. The e-commerce platform is perfect for our needs.',
       rating: 5,
       result: '200% revenue increase'
-    },
-    {
-      name: 'Michael Thompson',
-      business: 'Thompson Legal Services',
-      location: 'Miami, FL',
-      avatar: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20middle-aged%20man%20lawyer%2C%20confident%20and%20trustworthy%20appearance%2C%20law%20office%20background%2C%20business%20suit%2C%20professional%20and%20authoritative%20presence&width=400&height=400&seq=testimonial-004&orientation=squarish',
-      text: 'My old website looked like it was from 2005. The new site attracts higher-quality clients and positions us as the premium law firm we are. Client inquiries increased by 400%.',
-      rating: 5,
-      result: '400% more client inquiries'
-    },
-    {
-      name: 'Mama Lisa Dental House ',
-      business: 'Park Dental Practice',
-      location: 'Nairobi, Kenya',
-      avatar: 'https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/529010206_1330516251972477_4671462727590817214_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEg8jXuR36GJziDT46fCN2tPXGVpcOrmzc9cZWlw6ubN_jpglVRZ1_BWeeua9R1gChocKGsdqSnSs7nc-WTMGzi&_nc_ohc=r1IhuPk1kY0Q7kNvwFVyp7P&_nc_oc=AdmtqEFgCTeZ3mfXK6APDK1GiAu3YvQ4CM0be5CUWIo1ZzZKCouT7fwWSg_KX-alAao&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=j7Hhnl0O9-vsSIhE0nJvnw&oh=00_AfVfoy5F7pdncrsYmNyofcStu6XN0V9gdnb2iRtDeeI79g&oe=68981FE1',
-      text: 'Patients love booking appointments online and the educational content builds trust before they even walk in. Our new patient bookings doubled, and our online reputation improved significantly.',
-      rating: 5,
-      result: '200% more new patients'
-    },
-    {
-      name: 'Robert Williams',
-      business: 'Williams Construction',
-      location: 'Phoenix, AZ',
-      avatar: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20construction%20business%20owner%2C%20hard%20hat%20nearby%2C%20construction%20site%20background%2C%20work%20shirt%20and%20safety%20vest%2C%20reliable%20and%20experienced%20appearance&width=400&height=400&seq=testimonial-006&orientation=squarish',
-      text: 'The project gallery showcases our work perfectly. Potential clients can see our quality before calling. We book 3x more consultations now, and customers come to us already sold on our work.',
-      rating: 5,
-      result: '300% more consultations'
     }
   ];
 

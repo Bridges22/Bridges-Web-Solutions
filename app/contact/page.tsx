@@ -31,23 +31,39 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('');
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        business: '',
-        website: '',
-        projectType: '',
-        budget: '',
-        timeline: '',
-        message: ''
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 2000);
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          business: '',
+          website: '',
+          projectType: '',
+          budget: '',
+          timeline: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,6 +119,18 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold text-green-800">Message Sent Successfully!</div>
                         <div className="text-green-600 text-sm">We'll get back to you within 24 hours.</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <i className="ri-error-warning-line text-red-600 mr-3 text-xl"></i>
+                      <div>
+                        <div className="font-semibold text-red-800">Failed to Send Message</div>
+                        <div className="text-red-600 text-sm">Please try again or contact us directly via WhatsApp.</div>
                       </div>
                     </div>
                   </div>
