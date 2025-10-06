@@ -1,10 +1,59 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+
+// Custom hook for animated counters
+function useAnimatedCounter(end: number, duration: number = 2000, delay: number = 0) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const timer = setTimeout(() => {
+      let startTime: number;
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        setCount(Math.floor(progress * end));
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [isVisible, end, duration, delay]);
+
+  return { count, ref };
+}
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const projectsCounter = useAnimatedCounter(50, 2000, 0);
+  const satisfactionCounter = useAnimatedCounter(100, 2000, 200);
 
   useEffect(() => {
     setMounted(true);
@@ -73,37 +122,81 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Elegant Stats Section */}
+        {/* Enhanced Stats Section with Animated Counters */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-4">
-          {[
-            { number: "50+", label: "Projects Completed", icon: "ri-code-s-slash-line", delay: "0ms" },
-            { number: "24/7", label: "Support Available", icon: "ri-customer-service-line", delay: "200ms" },
-            { number: "100%", label: "Mobile Optimized", icon: "ri-smartphone-line", delay: "400ms" }
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="group relative bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/30 hover:border-indigo-400/30 transition-all duration-500 hover:bg-slate-800/60"
-              style={{
-                animation: mounted ? `slideUp 0.8s ease-out ${stat.delay} both` : 'none'
-              }}
-            >
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <i className={`${stat.icon} text-xl sm:text-2xl text-white`}></i>
-                  </div>
-                </div>
-
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-
-                <div className="text-slate-300 font-medium text-sm sm:text-base">
-                  {stat.label}
+          {/* Projects Counter */}
+          <div
+            ref={projectsCounter.ref}
+            className="group relative bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/30 hover:border-indigo-400/30 transition-all duration-500 hover:bg-slate-800/60 hover:scale-105"
+            style={{
+              animation: mounted ? `slideUp 0.8s ease-out 0ms both` : 'none'
+            }}
+          >
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i className="ri-code-s-slash-line text-xl sm:text-2xl text-white"></i>
                 </div>
               </div>
+
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                {projectsCounter.count}+
+              </div>
+
+              <div className="text-slate-300 font-medium text-sm sm:text-base">
+                Projects Completed
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* 24/7 Support */}
+          <div
+            className="group relative bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/30 hover:border-indigo-400/30 transition-all duration-500 hover:bg-slate-800/60 hover:scale-105"
+            style={{
+              animation: mounted ? `slideUp 0.8s ease-out 200ms both` : 'none'
+            }}
+          >
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i className="ri-customer-service-line text-xl sm:text-2xl text-white"></i>
+                </div>
+              </div>
+
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2">
+                24/7
+              </div>
+
+              <div className="text-slate-300 font-medium text-sm sm:text-base">
+                Support Available
+              </div>
+            </div>
+          </div>
+
+          {/* Satisfaction Counter */}
+          <div
+            ref={satisfactionCounter.ref}
+            className="group relative bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/30 hover:border-indigo-400/30 transition-all duration-500 hover:bg-slate-800/60 hover:scale-105"
+            style={{
+              animation: mounted ? `slideUp 0.8s ease-out 400ms both` : 'none'
+            }}
+          >
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i className="ri-heart-line text-xl sm:text-2xl text-white"></i>
+                </div>
+              </div>
+
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                {satisfactionCounter.count}%
+              </div>
+
+              <div className="text-slate-300 font-medium text-sm sm:text-base">
+                Client Satisfaction
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

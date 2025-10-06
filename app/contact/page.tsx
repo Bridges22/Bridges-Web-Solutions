@@ -34,6 +34,8 @@ export default function ContactPage() {
     setSubmitStatus('');
 
     try {
+      console.log('Submitting form data:', formData);
+      
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -41,6 +43,11 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       });
+
+      console.log('Response status:', response.status);
+      
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -57,6 +64,7 @@ export default function ContactPage() {
         });
       } else {
         setSubmitStatus('error');
+        console.error('API Error:', responseData);
       }
     } catch (error) {
       console.error('Error submitting form:', error);

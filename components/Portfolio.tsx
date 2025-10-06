@@ -2,46 +2,96 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  industry: string;
+  description: string;
+  url: string;
+  image: string;
+  challenge: string;
+  solution: string;
+  result: string;
+  technologies: string[];
+  livePreview: boolean;
+  featured: boolean;
+}
 
 export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const projects = [
     {
       id: 1,
       title: 'Local Restaurant Chain',
-      category: 'Restaurant Website',
+      category: 'Restaurant',
+      industry: 'Food & Beverage',
       description: 'Increased online orders by 300% with mobile-first design and integrated ordering system.',
-       url: 'https://about-thyme.com/',
+      url: 'https://about-thyme.com/',
       image: 'https://about-thyme.com/wp-content/uploads/2021/04/home-slide-1.jpg',
       challenge: 'Client had no online presence and was losing customers to competitors',
       solution: 'Built responsive site with online menu, ordering system, and reservation booking',
       result: '300% increase in online orders within 3 months',
-      technologies: ['React', 'Next.js', 'Stripe', 'MongoDB']
+      technologies: ['React', 'Next.js', 'Stripe', 'MongoDB'],
+      livePreview: true,
+      featured: true
     },
     {
       id: 2,
       title: 'Fitness Studio Network',
-      category: 'Service Business',
+      category: 'Fitness',
+      industry: 'Health & Fitness',
       description: 'Streamlined class bookings and memberships with custom booking system and member portal.',
-       url: 'https://www.mom3ntum.com/',
+      url: 'https://www.mom3ntum.com/',
       image: 'https://www.mom3ntum.com/assets/images/6.webp',
       challenge: 'Manual booking system was limiting growth and frustrating customers',
       solution: 'Custom booking platform with member portal and automated scheduling',
       result: '150% increase in class bookings and 40% reduction in admin time',
-      technologies: ['Vue.js', 'Node.js', 'PostgreSQL', 'Stripe']
+      technologies: ['Vue.js', 'Node.js', 'PostgreSQL', 'Stripe'],
+      livePreview: true,
+      featured: false
     },
     {
       id: 3,
       title: 'E-commerce Boutique',
-      category: 'Online Store',
+      category: 'E-commerce',
+      industry: 'Retail & Fashion',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
-       url: 'https://boutique.co.ke/',
+      url: 'https://boutique.co.ke/',
       image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       challenge: 'Physical store only, missing out on online sales opportunities',
       solution: 'Full e-commerce platform with inventory management and payment processing',
       result: '200% revenue increase with 60% of sales now coming from online',
-      technologies: ['Shopify', 'React', 'Payment Gateway', 'Analytics']
+      technologies: ['Shopify', 'React', 'Payment Gateway', 'Analytics'],
+      livePreview: true,
+      featured: true
     },
   ];
+
+  const industries = ['All', 'Food & Beverage', 'Health & Fitness', 'Retail & Fashion', 'Professional Services', 'Healthcare', 'Construction'];
+
+  // Filter projects based on active filter
+  useEffect(() => {
+    if (activeFilter === 'All') {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(projects.filter(project => project.industry === activeFilter));
+    }
+  }, [activeFilter]);
+
+  // Initialize filtered projects
+  useEffect(() => {
+    setFilteredProjects(projects);
+  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800" id="portfolio">
@@ -73,13 +123,34 @@ export default function Portfolio() {
           </p>
         </div>
 
+        {/* Industry Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {industries.map((industry) => (
+            <button
+              key={industry}
+              onClick={() => setActiveFilter(industry)}
+              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap cursor-pointer transform hover:scale-105 ${
+                activeFilter === industry
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg border border-cyan-400/50'
+                  : 'bg-gradient-to-r from-slate-700/80 to-slate-800/80 text-gray-300 hover:text-white border border-slate-600/50 hover:border-cyan-400/30 hover:bg-slate-700/60'
+              }`}
+              style={{
+                boxShadow: activeFilter === industry ? '0 0 20px rgba(34, 211, 238, 0.4)' : 'none'
+              }}
+            >
+              {industry}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div 
               key={project.id}
-              className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-2"
+              className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-3 hover:scale-105"
               style={{
-                boxShadow: '0 10px 40px rgba(15, 23, 42, 0.6), inset 0 1px 0 rgba(148, 163, 184, 0.1)'
+                boxShadow: '0 10px 40px rgba(15, 23, 42, 0.6), inset 0 1px 0 rgba(148, 163, 184, 0.1)',
+                animation: mounted ? `fadeInUp 0.6s ease-out ${index * 100}ms both` : 'none'
               }}
             >
               {/* Hover Glow Effect */}
@@ -94,29 +165,54 @@ export default function Portfolio() {
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                 />
                 
-                {/* Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Featured Badge */}
+                {project.featured && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                    <i className="ri-star-fill"></i>
+                    Featured
+                  </div>
+                )}
+
+                {/* Live Preview Badge */}
+                {project.livePreview && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    Live
+                  </div>
+                )}
                 
-                {/* Demo Button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <a 
-                  
-                  href={project.url} 
-                   target="_blank" 
-                  rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300"
-                    style={{
-                      boxShadow: '0 0 20px rgba(34, 211, 238, 0.6)'
-
-
-                    }}
-                  >
-                    <i className="ri-eye-line mr-2"></i>
-                    View Demo
-                  </a>
+                {/* Enhanced Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                
+                {/* Interactive Demo Buttons */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="flex gap-3">
+                    <a 
+                      href={project.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-4 py-2 rounded-full font-semibold text-sm transform scale-90 group-hover:scale-100 transition-all duration-300 flex items-center gap-2"
+                      style={{
+                        boxShadow: '0 0 20px rgba(34, 211, 238, 0.6)'
+                      }}
+                    >
+                      <i className="ri-eye-line"></i>
+                      Live Demo
+                    </a>
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-4 py-2 rounded-full font-semibold text-sm transform scale-90 group-hover:scale-100 transition-all duration-300 flex items-center gap-2"
+                      style={{
+                        boxShadow: '0 0 20px rgba(168, 85, 247, 0.6)'
+                      }}
+                    >
+                      <i className="ri-file-text-line"></i>
+                      Case Study
+                    </Link>
+                  </div>
                 </div>
               </div>
               
@@ -246,6 +342,19 @@ export default function Portfolio() {
           </Link>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }

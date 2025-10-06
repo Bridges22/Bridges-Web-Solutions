@@ -7,12 +7,20 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
   ];
+
+  // Close mobile menu when clicking a link
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -47,7 +55,7 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm group"
+                  className="relative text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm group cursor-pointer"
                 >
                   {item.name}
                   <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
@@ -88,8 +96,8 @@ export default function Navigation() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm py-2"
+                    onClick={handleLinkClick}
+                    className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm py-2 cursor-pointer"
                   >
                     {item.name}
                   </Link>
