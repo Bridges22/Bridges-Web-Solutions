@@ -4,7 +4,9 @@ import { useState } from 'react';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton';
+import SEOHead from '../../components/SEOHead';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 interface BlogPost {
   id: number;
@@ -23,85 +25,111 @@ interface BlogPost {
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Web Development', 'SEO Tips', 'Business Growth', 'Design Trends', 'E-commerce'];
+  const categories = ['All', 'Web Development', 'SEO Tips', 'E-commerce', 'Design Trends', 'Pricing Guide', 'Mobile Development', 'Digital Marketing'];
 
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: '10 Essential Features Every Business Website Needs in 2024',
-      excerpt: 'Discover the must-have features that will make your business website stand out and convert more visitors into customers.',
+      title: 'Best Web Design Company in Nairobi Kenya - Complete 2024 Guide',
+      excerpt: 'Looking for the best web design company in Nairobi? Discover what makes a great web development partner and how to choose the right agency for your business in Kenya.',
       content: 'Full blog content here...',
       category: 'Web Development',
       author: 'Bridges Ochieng',
       date: '2024-01-15',
       readTime: '8 min read',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
-      tags: ['Website Features', 'Business', 'Conversion'],
+      tags: ['Web Design Nairobi', 'Kenya Web Development', 'Best Web Company'],
       featured: true
     },
     {
       id: 2,
-      title: 'How to Improve Your Website\'s SEO: A Complete Guide for Kenyan Businesses',
-      excerpt: 'Learn proven SEO strategies that will help your business rank higher on Google and attract more local customers.',
+      title: 'Website Development Cost in Kenya 2024 - Complete Pricing Guide',
+      excerpt: 'How much does it cost to build a website in Kenya? Get transparent pricing for web development services in Nairobi and across Kenya.',
       content: 'Full blog content here...',
-      category: 'SEO Tips',
+      category: 'Pricing Guide',
       author: 'Bridges Ochieng',
-      date: '2024-01-10',
-      readTime: '12 min read',
-      image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-      tags: ['SEO', 'Local Business', 'Google Rankings'],
+      date: '2024-01-12',
+      readTime: '10 min read',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      tags: ['Website Cost Kenya', 'Web Development Pricing', 'Nairobi Web Design'],
       featured: true
     },
     {
       id: 3,
-      title: 'E-commerce Success: 5 Ways a Professional Website Boosts Online Sales',
-      excerpt: 'Discover how investing in a professional e-commerce website can dramatically increase your online revenue and customer satisfaction.',
+      title: 'E-commerce Website Development in Kenya - Online Store Success Guide',
+      excerpt: 'Start selling online in Kenya with a professional e-commerce website. Learn about online payment integration, M-Pesa, and digital marketing strategies.',
       content: 'Full blog content here...',
       category: 'E-commerce',
       author: 'Bridges Ochieng',
-      date: '2024-01-05',
-      readTime: '10 min read',
+      date: '2024-01-10',
+      readTime: '12 min read',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
-      tags: ['E-commerce', 'Online Sales', 'Revenue Growth'],
-      featured: false
+      tags: ['E-commerce Kenya', 'Online Store', 'M-Pesa Integration'],
+      featured: true
     },
     {
       id: 4,
-      title: 'Mobile-First Design: Why Your Website Must Work Perfectly on Phones',
-      excerpt: 'With over 60% of web traffic coming from mobile devices, learn why mobile-first design is crucial for your business success.',
+      title: 'Local SEO for Kenyan Businesses - Rank #1 on Google Kenya',
+      excerpt: 'Dominate local search results in Kenya. Learn proven SEO strategies to rank higher on Google Kenya and attract more customers in Nairobi, Mombasa, and beyond.',
       content: 'Full blog content here...',
-      category: 'Design Trends',
+      category: 'SEO Tips',
       author: 'Bridges Ochieng',
-      date: '2023-12-28',
-      readTime: '6 min read',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      tags: ['Mobile Design', 'User Experience', 'Responsive'],
+      date: '2024-01-08',
+      readTime: '15 min read',
+      image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+      tags: ['SEO Kenya', 'Google Kenya', 'Local SEO Nairobi'],
       featured: false
     },
     {
       id: 5,
-      title: 'Website Speed Optimization: How Fast Loading Boosts Your Business',
-      excerpt: 'Learn why website speed matters for your business and discover practical tips to make your site load faster.',
+      title: 'Professional Website Design Nairobi - Modern Business Websites',
+      excerpt: 'Get a modern, professional website design in Nairobi. Discover the latest design trends and how a great website can transform your business in Kenya.',
       content: 'Full blog content here...',
-      category: 'Web Development',
+      category: 'Design Trends',
       author: 'Bridges Ochieng',
-      date: '2023-12-20',
+      date: '2024-01-05',
       readTime: '9 min read',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      tags: ['Performance', 'Speed Optimization', 'User Experience'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      tags: ['Website Design Nairobi', 'Professional Website', 'Modern Design'],
       featured: false
     },
     {
       id: 6,
-      title: 'Small Business Website Checklist: 15 Things You Can\'t Afford to Miss',
-      excerpt: 'Ensure your small business website has everything it needs to succeed with this comprehensive checklist.',
+      title: 'Mobile Website Development Kenya - Responsive Design Guide',
+      excerpt: 'With 80% of Kenyans accessing internet via mobile, learn why mobile-first website development is crucial for your business success in Kenya.',
       content: 'Full blog content here...',
-      category: 'Business Growth',
+      category: 'Mobile Development',
       author: 'Bridges Ochieng',
-      date: '2023-12-15',
-      readTime: '7 min read',
+      date: '2024-01-03',
+      readTime: '8 min read',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      tags: ['Mobile Website Kenya', 'Responsive Design', 'Mobile First'],
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'WordPress vs Custom Website Development in Kenya - Which is Better?',
+      excerpt: 'WordPress or custom development? Compare options for your Kenyan business website and make the right choice for your budget and goals.',
+      content: 'Full blog content here...',
+      category: 'Web Development',
+      author: 'Bridges Ochieng',
+      date: '2024-01-01',
+      readTime: '11 min read',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      tags: ['WordPress Kenya', 'Custom Development', 'Website Comparison'],
+      featured: false
+    },
+    {
+      id: 8,
+      title: 'Digital Marketing Services Kenya - Grow Your Business Online',
+      excerpt: 'Boost your business with digital marketing in Kenya. Learn about SEO, social media marketing, and online advertising strategies that work in the Kenyan market.',
+      content: 'Full blog content here...',
+      category: 'Digital Marketing',
+      author: 'Bridges Ochieng',
+      date: '2023-12-28',
+      readTime: '13 min read',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      tags: ['Small Business', 'Website Checklist', 'Business Tips'],
+      tags: ['Digital Marketing Kenya', 'Online Marketing', 'SEO Services'],
       featured: false
     }
   ];
@@ -114,6 +142,14 @@ export default function BlogPage() {
 
   return (
     <>
+      <SEOHead
+        title="Web Development Blog Kenya - Expert Tips & Insights"
+        description="Get expert web development insights, SEO tips, and digital marketing strategies for Kenyan businesses. Learn from Kenya's leading web development agency."
+        keywords="web development blog Kenya, SEO tips Kenya, website design Nairobi, digital marketing Kenya, web development insights"
+        canonicalUrl="https://your-domain.com/blog"
+        ogImage="https://your-domain.com/blog-og-image.jpg"
+        ogType="website"
+      />
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}

@@ -8,28 +8,28 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Amara Okafor',
-      business: 'Okafor Family Restaurant',
+      name: 'Sarah Mitchell',
+      business: 'Mitchell Family Restaurant',
       location: 'Nairobi, Kenya',
-      avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'Our online orders tripled within two months of launching our new website. The mobile ordering system is so easy for our customers to use. Best investment we ever made for the restaurant.',
       rating: 5,
       result: '300% increase in online orders'
     },
     {
-      name: 'Marcus Johnson',
-      business: 'FitCore Gym',
-      location: 'Atlanta, GA, USA',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
+      name: 'Michael Johnson',
+      business: 'FitCore Gym Nairobi',
+      location: 'Westlands, Nairobi',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'The booking system completely transformed how we manage classes. Members love being able to book online, and we cut our admin time in half. Our membership has grown 150% since launch.',
       rating: 5,
       result: '150% membership growth'
     },
     {
-      name: 'Sarah Johnson',
-      business: 'Bloom Boutique',
-      location: 'Chicago, IL, USA',
-      avatar: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
+      name: 'Emma Thompson',
+      business: 'Bloom Fashion Boutique',
+      location: 'Karen, Nairobi',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
       text: 'Going from a physical store to online sales seemed impossible until I worked with Bridges. Now 60% of our revenue comes from our website. The e-commerce platform is perfect for our needs.',
       rating: 5,
       result: '200% revenue increase'
@@ -64,6 +64,10 @@ export default function Testimonials() {
                   src={testimonials[currentTestimonial].avatar}
                   alt={testimonials[currentTestimonial].name}
                   className="w-24 h-24 rounded-full object-cover border-4 border-blue-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80';
+                  }}
                 />
               </div>
               
