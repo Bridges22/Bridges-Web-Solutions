@@ -40,7 +40,7 @@ export default function AboutPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/254104613770?text=Hi! I'd like to learn more about your web development services."
+                  href="https://wa.me/+254104613770?text=Hi! I'd like to learn more about your web development services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105"
@@ -53,10 +53,30 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50">
                   <div className="text-center mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <i className="ri-user-line text-3xl text-white"></i>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <img
+                        src="/images/team/WhatsApp Image 2025-10-06 at 14.14.30_fc5741c0.jpg"
+                        alt="Bridges Mwashighadi - Founder & Lead Developer"
+                        className="w-full h-full rounded-full object-cover border-4 border-gradient-to-r from-cyan-500 to-blue-500 shadow-xl"
+                        onError={(e) => {
+                          // Fallback to gradient circle with icon if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div 
+                        className="w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center absolute top-0 left-0 shadow-xl hidden"
+                      >
+                        <i className="ri-user-line text-4xl text-white"></i>
+                      </div>
+                      {/* Professional badge */}
+                      <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-2 border-2 border-slate-800">
+                        <i className="ri-verified-badge-line text-white text-sm"></i>
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Bridges Ochieng</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Bridges Mwashighadi</h3>
                     <p className="text-cyan-400 font-semibold">Founder & Lead Developer</p>
                   </div>
                   <p className="text-gray-300 text-center leading-relaxed">

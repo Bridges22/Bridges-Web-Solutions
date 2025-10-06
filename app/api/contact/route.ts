@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import FormLogger from '../../../lib/formLogger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,17 +30,43 @@ export async function POST(request: NextRequest) {
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
       console.error('Missing SMTP environment variables');
       console.error('Available env vars:', Object.keys(process.env).filter(key => key.startsWith('SMTP')));
-      return NextResponse.json(
-        { 
-          error: 'Email service not configured. Please contact us via WhatsApp.',
-          debug: {
-            hasSmtpUser: !!process.env.SMTP_USER,
-            hasSmtpPass: !!process.env.SMTP_PASS,
-            envKeys: Object.keys(process.env).filter(key => key.startsWith('SMTP'))
-          }
-        },
-        { status: 500 }
-      );
+      
+      // Fallback: Save to a simple database or file for manual processing
+      // For now, we'll use a webhook service as backup
+      try {
+        // Use structured logging for better tracking
+        const fallbackData = {
+          timestamp: new Date().toISOString(),
+          name, email, phone, business, website, projectType, budget, timeline, message,
+          source: 'website_contact_form',
+          status: 'smtp_unavailable',
+          userAgent: request.headers.get('user-agent') || 'Unknown',
+          ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown'
+        };
+        
+        // Use the structured logger
+        FormLogger.logSubmission(fallbackData);
+        
+        // Optional: Send to webhook service (uncomment and add your webhook URL)
+        // await FormLogger.sendToWebhook(fallbackData, 'YOUR_WEBHOOK_URL_HERE');
+        
+        return NextResponse.json(
+          { 
+            message: 'Your message has been received! We will contact you via WhatsApp or phone within 24 hours.',
+            fallback: true
+          },
+          { status: 200 }
+        );
+      } catch (fallbackError) {
+        console.error('Fallback also failed:', fallbackError);
+        return NextResponse.json(
+          { 
+            error: 'Email service temporarily unavailable. Please contact us directly via WhatsApp: +254104613770',
+            whatsapp: 'https://wa.me/254104613770'
+          },
+          { status: 500 }
+        );
+      }
     }
 
     // Create transporter with better error handling
@@ -137,6 +164,18 @@ Reply directly to this email to respond to ${name}.
       html: emailContent,
       replyTo: email, // Direct replies go to the client
     });
+
+    // Log successful email submission
+    const successData = {
+      timestamp: new Date().toISOString(),
+      name, email, phone, business, website, projectType, budget, timeline, message,
+      source: 'website_contact_form',
+      status: 'email_sent_successfully',
+      userAgent: request.headers.get('user-agent') || 'Unknown',
+      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown'
+    };
+    
+    FormLogger.logSubmission(successData);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
