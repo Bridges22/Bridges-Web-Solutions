@@ -111,6 +111,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
+        {/* Google AdSense */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          strategy="afterInteractive"
+          data-ad-client="ca-pub-7752239683582941"
+          crossOrigin="anonymous"
+          async
+        />
+        
         <JsonLd data={jsonLd} />
         <link rel="canonical" href="https://bridgeswebsolutions.top" />
         <meta name="geo.region" content="KE-30" />

@@ -122,7 +122,9 @@ export default function Footer() {
                 { text: 'Portfolio', href: '/portfolio' },
                 { text: 'Contact', href: '/contact' },
                 { text: 'Testimonials', href: '#testimonials' },
-                { text: 'Process', href: 'https://wa.me/254104613770?text=Hi! I\'d like to know more about your process.', external: true }
+                { text: 'Process', href: 'https://wa.me/254104613770?text=Hi! I\'d like to know more about your process.', external: true },
+                { text: 'Privacy Policy', href: '/privacy-policy' },
+                { text: 'Terms & Conditions', href: '/terms-and-conditions' }
               ].map((item, index) => (
                 <li key={index}>
                   {item.external ? (
