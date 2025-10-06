@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// Add CORS headers for production
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+// Handle preflight requests
+export async function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
+
 export async function POST(request: NextRequest) {
   console.log('=== API ROUTE CALLED ===');
   
@@ -28,7 +40,7 @@ export async function POST(request: NextRequest) {
       console.log('Validation failed - missing required fields');
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -52,20 +64,19 @@ export async function POST(request: NextRequest) {
       console.log('Email:', fallbackData.email);
       console.log('Phone:', fallbackData.phone || 'Not provided');
       console.log('Business:', fallbackData.business);
-      console.log('Project Type:', fallbackData.projectType);
       console.log('Message:', fallbackData.message);
       console.log('Status:', fallbackData.status);
       console.log('==========================================');
       
       // ALWAYS return success to user
-      return NextResponse.json(
-        { 
-          message: 'Your message has been received! We will contact you via WhatsApp or phone within 24 hours.',
-          fallback: true,
-          success: true
-        },
-        { status: 200 }
-      );
+        return NextResponse.json(
+          { 
+            message: 'Your message has been received! We will contact you via WhatsApp or phone within 24 hours.',
+            fallback: true,
+            success: true
+          },
+          { status: 200, headers: corsHeaders }
+        );
     }
 
     // Create transporter with better error handling
@@ -85,7 +96,7 @@ export async function POST(request: NextRequest) {
       console.error('SMTP verification failed:', verifyError);
       return NextResponse.json(
         { error: 'Email service temporarily unavailable. Please contact us via WhatsApp.' },
-        { status: 500 }
+        { status: 500, headers: corsHeaders }
       );
     }
 
@@ -186,7 +197,7 @@ Reply directly to this email to respond to ${name}.
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
-      { status: 200 }
+      { status: 200, headers: corsHeaders }
     );
 
   } catch (error) {
@@ -210,7 +221,7 @@ Reply directly to this email to respond to ${name}.
         details: error instanceof Error ? error.message : 'Unknown error',
         timestamp: new Date().toISOString()
       },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }
@@ -232,7 +243,7 @@ export async function GET() {
           nodeEnv: process.env.NODE_ENV
         }
       },
-      { status: 200 }
+      { status: 200, headers: corsHeaders }
     );
   } catch (error) {
     console.error('Error in GET endpoint:', error);
@@ -241,7 +252,7 @@ export async function GET() {
         error: 'GET endpoint failed',
         details: error instanceof Error ? error.message : 'Unknown error'
       },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

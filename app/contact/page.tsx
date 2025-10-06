@@ -46,8 +46,41 @@ export default function ContactPage() {
 
       console.log('Response status:', response.status);
       
-      const responseData = await response.json();
-      console.log('Response data:', responseData);
+      // Handle different response scenarios
+      if (response.status === 405) {
+        // Method not allowed - API route issue
+        console.error('API route not properly configured (405 Method Not Allowed)');
+        setSubmitStatus('api-error');
+        return;
+      }
+      
+      if (response.status === 404) {
+        // API route not found
+        console.error('API route not found (404)');
+        setSubmitStatus('api-error');
+        return;
+      }
+
+      // Try to parse JSON response
+      let responseData;
+      try {
+        const responseText = await response.text();
+        console.log('Raw response:', responseText);
+        
+        if (responseText.trim() === '') {
+          console.error('Empty response from server');
+          setSubmitStatus('api-error');
+          return;
+        }
+        
+        responseData = JSON.parse(responseText);
+        console.log('Response data:', responseData);
+      } catch (parseError) {
+        console.error('Failed to parse JSON response:', parseError);
+        console.error('Response was not valid JSON');
+        setSubmitStatus('api-error');
+        return;
+      }
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -149,6 +182,31 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold text-red-800">Failed to Send Message</div>
                         <div className="text-red-600 text-sm">Please try again or contact us directly via WhatsApp.</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'api-error' && (
+                  <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <i className="ri-settings-3-line text-yellow-600 mr-3 text-xl"></i>
+                      <div>
+                        <div className="font-semibold text-yellow-800">Server Configuration Issue</div>
+                        <div className="text-yellow-600 text-sm">
+                          Our contact form is temporarily unavailable. Please contact us directly via WhatsApp for immediate assistance.
+                        </div>
+                        <div className="mt-2">
+                          <a 
+                            href="https://wa.me/254104613770?text=Hi! I tried to submit the contact form but it's not working. Here are my details:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+                          >
+                            <i className="ri-whatsapp-line"></i>
+                            Contact via WhatsApp
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
