@@ -70,6 +70,28 @@ export default function DebugPage() {
     }
   };
 
+  const testGETAPI = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'GET',
+      });
+
+      const data = await response.json();
+      setResult({
+        status: response.status,
+        statusText: response.statusText,
+        data: data
+      });
+    } catch (error) {
+      setResult({
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 py-12">
       <div className="container mx-auto px-6">
@@ -81,9 +103,17 @@ export default function DebugPage() {
             
             <div className="space-y-4">
               <button
+                onClick={testGETAPI}
+                disabled={loading}
+                className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold disabled:opacity-50"
+              >
+                {loading ? 'Testing...' : 'Test GET Contact API'}
+              </button>
+              
+              <button
                 onClick={testAPI}
                 disabled={loading}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold disabled:opacity-50"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold disabled:opacity-50 ml-4"
               >
                 {loading ? 'Testing...' : 'Test Simple API'}
               </button>

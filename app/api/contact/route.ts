@@ -2,8 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
+  console.log('=== API ROUTE CALLED ===');
+  
   try {
+    console.log('Attempting to parse request body...');
     const body = await request.json();
+    console.log('Request body parsed successfully:', body);
+    
     const { name, email, phone, business, website, projectType, budget, timeline, message } = body;
 
     // Debug logging
@@ -185,19 +190,56 @@ Reply directly to this email to respond to ${name}.
     );
 
   } catch (error) {
-    console.error('Error sending email:', error);
-    
-    // More detailed error logging for debugging
+    console.error('=== CRITICAL ERROR IN API ROUTE ===');
+    console.error('Error type:', typeof error);
+    console.error('Error message:', error instanceof Error ? error.message : 'Unknown error');
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     console.error('Environment check:', {
       hasSmtpUser: !!process.env.SMTP_USER,
       hasSmtpPass: !!process.env.SMTP_PASS,
       smtpUser: process.env.SMTP_USER,
+      nodeEnv: process.env.NODE_ENV
     });
+    console.error('=====================================');
 
+    // Always return a valid JSON response
     return NextResponse.json(
       { 
-        error: 'Failed to send email. Please contact us directly via WhatsApp.',
-        details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : 'Unknown error') : undefined
+        error: 'API Error occurred',
+        message: 'There was an error processing your request. Please contact us via WhatsApp.',
+        details: error instanceof Error ? error.message : 'Unknown error',
+        timestamp: new Date().toISOString()
+      },
+      { status: 500 }
+    );
+  }
+}
+
+// Add a GET endpoint for testing
+export async function GET() {
+  console.log('=== GET REQUEST TO CONTACT API ===');
+  
+  try {
+    return NextResponse.json(
+      { 
+        message: 'Contact API is working',
+        timestamp: new Date().toISOString(),
+        environment: {
+          hasSmtpUser: !!process.env.SMTP_USER,
+          hasSmtpPass: !!process.env.SMTP_PASS,
+          hasSmtpHost: !!process.env.SMTP_HOST,
+          hasSmtpPort: !!process.env.SMTP_PORT,
+          nodeEnv: process.env.NODE_ENV
+        }
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error in GET endpoint:', error);
+    return NextResponse.json(
+      { 
+        error: 'GET endpoint failed',
+        details: error instanceof Error ? error.message : 'Unknown error'
       },
       { status: 500 }
     );
