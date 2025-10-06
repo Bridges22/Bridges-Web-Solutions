@@ -126,6 +126,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Nairobi" />
         <meta name="geo.position" content="-1.286389;36.817223" />
         <meta name="ICBM" content="-1.286389, 36.817223" />
+        <meta name="google-adsense-account" content="ca-pub-7752239683582941" />
         
         {/* Google Tag Manager */}
         <Script
