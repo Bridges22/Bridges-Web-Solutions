@@ -1,6 +1,16 @@
 {
-  "/page": "app/page.js",
   "/about/page": "app/about/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/test-contact/route": "app/api/test-contact/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/debug/page": "app/debug/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/page": "app/page.js",
   "/portfolio/page": "app/portfolio/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/pricing/page": "app/pricing/page.js",
+  "/services/page": "app/services/page.js",
+  "/blog/[id]/page": "app/blog/[id]/page.js",
+  "/portfolio/[id]/page": "app/portfolio/[id]/page.js"
 }

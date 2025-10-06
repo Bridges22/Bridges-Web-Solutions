@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import FormLogger from '../../../lib/formLogger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,6 +15,8 @@ export async function POST(request: NextRequest) {
       SMTP_PORT: process.env.SMTP_PORT ? 'SET' : 'MISSING',
       NODE_ENV: process.env.NODE_ENV
     });
+    console.log('SMTP_USER value:', process.env.SMTP_USER);
+    console.log('SMTP_HOST value:', process.env.SMTP_HOST);
 
     // Validate required fields
     if (!name || !email || !business || !projectType || !message) {
@@ -28,60 +29,53 @@ export async function POST(request: NextRequest) {
 
     // Check if environment variables are available
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('Missing SMTP environment variables');
+      console.error('Missing SMTP environment variables - using fallback system');
       console.error('Available env vars:', Object.keys(process.env).filter(key => key.startsWith('SMTP')));
       
-      // Fallback: Save to a simple database or file for manual processing
-      // For now, we'll use a webhook service as backup
-      try {
-        // Use structured logging for better tracking
-        const fallbackData = {
-          timestamp: new Date().toISOString(),
-          name, email, phone, business, website, projectType, budget, timeline, message,
-          source: 'website_contact_form',
-          status: 'smtp_unavailable',
-          userAgent: request.headers.get('user-agent') || 'Unknown',
-          ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown'
-        };
-        
-        // Use the structured logger
-        FormLogger.logSubmission(fallbackData);
-        
-        // Optional: Send to webhook service (uncomment and add your webhook URL)
-        // await FormLogger.sendToWebhook(fallbackData, 'YOUR_WEBHOOK_URL_HERE');
-        
-        return NextResponse.json(
-          { 
-            message: 'Your message has been received! We will contact you via WhatsApp or phone within 24 hours.',
-            fallback: true
-          },
-          { status: 200 }
-        );
-      } catch (fallbackError) {
-        console.error('Fallback also failed:', fallbackError);
-        return NextResponse.json(
-          { 
-            error: 'Email service temporarily unavailable. Please contact us directly via WhatsApp: +254104613770',
-            whatsapp: 'https://wa.me/254104613770'
-          },
-          { status: 500 }
-        );
-      }
+      // ALWAYS use fallback system when SMTP is unavailable
+      const fallbackData = {
+        timestamp: new Date().toISOString(),
+        name, email, phone, business, website, projectType, budget, timeline, message,
+        source: 'website_contact_form',
+        status: 'smtp_unavailable'
+      };
+      
+      // Log the submission data
+      console.log('=== CONTACT FORM SUBMISSION (FALLBACK) ===');
+      console.log('Timestamp:', fallbackData.timestamp);
+      console.log('Name:', fallbackData.name);
+      console.log('Email:', fallbackData.email);
+      console.log('Phone:', fallbackData.phone || 'Not provided');
+      console.log('Business:', fallbackData.business);
+      console.log('Project Type:', fallbackData.projectType);
+      console.log('Message:', fallbackData.message);
+      console.log('Status:', fallbackData.status);
+      console.log('==========================================');
+      
+      // ALWAYS return success to user
+      return NextResponse.json(
+        { 
+          message: 'Your message has been received! We will contact you via WhatsApp or phone within 24 hours.',
+          fallback: true,
+          success: true
+        },
+        { status: 200 }
+      );
     }
 
     // Create transporter with better error handling
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Use Gmail service for better compatibility
+      service: 'gmail',
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-      // Remove debug and logger for production
     });
 
     // Verify transporter configuration
     try {
       await transporter.verify();
+      console.log('SMTP connection verified successfully');
     } catch (verifyError) {
       console.error('SMTP verification failed:', verifyError);
       return NextResponse.json(
@@ -175,7 +169,15 @@ Reply directly to this email to respond to ${name}.
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown'
     };
     
-    FormLogger.logSubmission(successData);
+    // Log successful submission
+    console.log('=== CONTACT FORM SUBMISSION (SUCCESS) ===');
+    console.log('Timestamp:', successData.timestamp);
+    console.log('Name:', successData.name);
+    console.log('Email:', successData.email);
+    console.log('Business:', successData.business);
+    console.log('Project Type:', successData.projectType);
+    console.log('Status:', successData.status);
+    console.log('=========================================');
 
     return NextResponse.json(
       { message: 'Email sent successfully' },

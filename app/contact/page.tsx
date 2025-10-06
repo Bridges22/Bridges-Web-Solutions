@@ -51,6 +51,10 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        // Show different message if using fallback
+        if (responseData.fallback) {
+          console.log('Using fallback system - email service unavailable');
+        }
         setFormData({
           name: '',
           email: '',
@@ -65,6 +69,12 @@ export default function ContactPage() {
       } else {
         setSubmitStatus('error');
         console.error('API Error:', responseData);
+        // Log the full error for debugging
+        console.error('Full error details:', {
+          status: response.status,
+          statusText: response.statusText,
+          data: responseData
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
