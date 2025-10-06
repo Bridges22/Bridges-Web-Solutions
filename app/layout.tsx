@@ -116,6 +116,17 @@ export default function RootLayout({
         <meta name="geo.placename" content="Nairobi" />
         <meta name="geo.position" content="-1.286389;36.817223" />
         <meta name="ICBM" content="-1.286389, 36.817223" />
+        
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C542QY5B8"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4C542QY5B8');
+          `,
+        }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}>
         {children}
