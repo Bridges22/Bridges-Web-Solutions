@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen">
+      <main className="min-h-screen overflow-x-hidden w-full">
         <Hero />
         <ClientLogos />
         <FeaturedProjects />

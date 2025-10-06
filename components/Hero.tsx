@@ -60,10 +60,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative flex items-center justify-center text-white overflow-hidden py-16 sm:py-20 md:py-24">
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative flex items-center justify-center text-white overflow-hidden py-16 sm:py-20 md:py-24 w-full">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-300 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-4 sm:left-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
+        <div className="absolute top-40 right-4 sm:right-32 w-1 h-1 bg-blue-300 rounded-full animate-pulse"></div>
         <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-ping delay-1000 opacity-40"></div>
         <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-500"></div>
         
@@ -80,17 +80,17 @@ export default function Hero() {
         ></div>
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 relative z-10 text-center max-w-5xl w-full">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center max-w-5xl w-full">
         {/* Main Hero Content - Streamlined and Professional */}
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight px-1 sm:px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight px-2 sm:px-4">
             Transform Your Business with{' '}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Exceptional Websites
             </span>
           </h2>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-slate-300 max-w-4xl mx-auto leading-relaxed px-4 font-light">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-slate-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 font-light">
           Professional websites that work 24/7 to grow your business. Fast-loading, mobile-first, and designed to convert visitors into customers.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* Enhanced Stats Section with Animated Counters */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-2 sm:px-4">
           {/* Projects Counter */}
           <div
             ref={projectsCounter.ref}
