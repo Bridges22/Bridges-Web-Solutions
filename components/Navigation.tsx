@@ -40,11 +40,11 @@ export default function Navigation() {
                   />
                 </div>
               </div>
-              <div className="hidden sm:block">
-                <h2 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent">
+              <div className="block">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent">
                   Bridges Web Solutions
                 </h2>
-                <p className="text-xs text-slate-400 font-medium">
+                <p className="hidden sm:block text-xs text-slate-400 font-medium">
                   Professional Web Development
                 </p>
               </div>

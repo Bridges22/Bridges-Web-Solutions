@@ -107,8 +107,8 @@ export default function ClientLogos() {
         </div>
 
         {/* Social Proof Stats */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-6 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-full px-8 py-4 border border-slate-700/50">
+        <div className="flex justify-center mt-12 px-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-full px-4 sm:px-8 py-4 border border-slate-700/50 w-full max-w-md sm:max-w-none sm:w-auto">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -119,7 +119,7 @@ export default function ClientLogos() {
               </div>
               <span className="text-sm text-gray-300 ml-2">50+ Happy Clients</span>
             </div>
-            <div className="w-px h-6 bg-slate-600"></div>
+            <div className="hidden sm:block w-px h-6 bg-slate-600"></div>
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((i) => (
