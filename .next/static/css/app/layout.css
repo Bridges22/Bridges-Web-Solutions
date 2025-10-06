@@ -2232,9 +2232,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity, 1));
 }
-.text-white\/90{
-  color: rgb(255 255 255 / 0.9);
-}
 .line-through{
   text-decoration-line: line-through;
 }
@@ -2921,6 +2918,10 @@ html {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .sm\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
   .sm\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -2928,10 +2929,6 @@ html {
   .sm\:py-5{
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-  }
-  .sm\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
   .sm\:text-2xl{
     font-size: 1.5rem;
@@ -3071,10 +3068,6 @@ html {
   .lg\:text-5xl{
     font-size: 3rem;
     line-height: 1;
-  }
-  .lg\:text-4xl{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
 
