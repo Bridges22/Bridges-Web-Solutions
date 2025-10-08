@@ -8,7 +8,7 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Dorothy Shally',
+      name: 'Dorothy Shaly',
       business: 'Community-Based Organization',
       location: 'Nairobi, Kenya',
       avatar: '/images/team/WhatsApp Image 2025-10-08 at 09.56.45_51b22381.jpg',
