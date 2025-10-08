@@ -8,11 +8,11 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Sarah Mitchell',
-      business: 'Mitchell Family Restaurant',
+      name: 'Dorothy Shally',
+      business: 'Community-Based Organization',
       location: 'Nairobi, Kenya',
-      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
-      text: 'Our online orders tripled within two months of launching our new website. The mobile ordering system is so easy for our customers to use. Best investment we ever made for the restaurant.',
+      avatar: '/images/team/WhatsApp Image 2025-10-08 at 09.56.45_51b22381.jpg',
+      text: 'I was amazed by the website Bridges Web Solutions built for my organization. Bridges is detailed, professional, and truly cares about delivering more than you expect. I’d definitely recommend his services to anyone needing a website.',
       rating: 5,
       result: '300% increase in online orders'
     },
