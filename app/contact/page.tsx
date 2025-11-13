@@ -36,7 +36,12 @@ export default function ContactPage() {
     try {
       console.log('Submitting form data:', formData);
       
-      const response = await fetch('/api/contact', {
+      // Build the API URL based on environment
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? '/api/contact'
+        : 'http://localhost:3000/api/contact';
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
