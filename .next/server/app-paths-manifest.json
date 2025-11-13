@@ -1,9 +1,7 @@
 {
-  "/social-media-management/page": "app/social-media-management/page.js",
   "/cctv-security-systems/page": "app/cctv-security-systems/page.js",
   "/tools/page": "app/tools/page.js",
   "/about/page": "app/about/page.js",
   "/services/page": "app/services/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/api/contact/route": "app/api/contact/route.js"
+  "/contact/page": "app/contact/page.js"
 }

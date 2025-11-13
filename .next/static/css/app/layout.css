@@ -474,6 +474,9 @@ video {
 .invisible{
   visibility: hidden;
 }
+.collapse{
+  visibility: collapse;
+}
 .static{
   position: static;
 }
@@ -937,6 +940,9 @@ video {
 }
 .grow{
   flex-grow: 1;
+}
+.border-collapse{
+  border-collapse: collapse;
 }
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
