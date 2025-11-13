@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
 
 // CORS headers for production
 const corsHeaders = {
@@ -17,7 +16,18 @@ export async function POST(request: NextRequest) {
   console.log('=== Contact Form API Called ===');
   
   try {
-    const body = await request.json();
+    // Parse request body with error handling
+    let body;
+    try {
+      body = await request.json();
+    } catch (parseError) {
+      console.error('Failed to parse request body:', parseError);
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400, headers: corsHeaders }
+      );
+    }
+    
     const { name, email, phone, business, website, projectType, budget, timeline, message } = body;
 
     // Validate required fields
@@ -54,8 +64,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Initialize Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // Initialize Resend with dynamic import and error handling
+    let resend;
+    try {
+      const { Resend } = await import('resend');
+      resend = new Resend(process.env.RESEND_API_KEY);
+    } catch (importError) {
+      console.error('Failed to import Resend:', importError);
+      // Use fallback
+      console.log('=== CONTACT FORM SUBMISSION (Import Failed) ===');
+      console.log(JSON.stringify({
+        timestamp: new Date().toISOString(),
+        name, email, phone, business, website, projectType, budget, timeline, message
+      }, null, 2));
+      
+      return NextResponse.json(
+        { 
+          message: 'Your message has been received! We will contact you within 24 hours.',
+          fallback: true,
+          success: true
+        },
+        { status: 200, headers: corsHeaders }
+      );
+    }
 
     // Email HTML content
     const emailHtml = `
