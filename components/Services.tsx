@@ -6,32 +6,52 @@ export default function Services() {
     {
       icon: 'ri-smartphone-line',
       title: 'Mobile Websites',
-      description: 'Responsive designs that look perfect on every device. Your customers browse on mobile - your site should too.'
+      description: 'Responsive designs that look perfect on every device. Your customers browse on mobile - your site should too.',
+      link: '/services#mobile-websites'
     },
     {
       icon: 'ri-flashlight-line',
       title: 'Fast Loading',
-      description: 'Lightning-fast websites that load in under 3 seconds. Speed equals sales - every second counts.'
+      description: 'Lightning-fast websites that load in under 3 seconds. Speed equals sales - every second counts.',
+      link: '/services#fast-loading'
     },
     {
       icon: 'ri-global-line',
       title: 'Google Visibility',
-      description: 'SEO-optimized to rank higher in search results. Be found when customers are looking for you.'
+      description: 'SEO-optimized to rank higher in search results. Be found when customers are looking for you.',
+      link: '/services#seo'
     },
     {
       icon: 'ri-shopping-cart-line',
       title: 'E-commerce Ready',
-      description: 'Online stores that convert browsers into buyers. Sell your products 24/7 with secure checkout.'
+      description: 'Online stores that convert browsers into buyers. Sell your products 24/7 with secure checkout.',
+      link: '/services#ecommerce'
+    },
+    {
+      icon: 'ri-share-line',
+      title: 'Social Media Management',
+      description: 'Grow your brand online with powerful social media management. We handle your presence while you focus on business.',
+      link: '/social-media-management',
+      isNew: true
+    },
+    {
+      icon: 'ri-camera-lens-line',
+      title: 'CCTV & Security',
+      description: 'Protect your business with reliable CCTV and smart surveillance systems. Professional installation and support.',
+      link: '/cctv-security-systems',
+      isNew: true
     },
     {
       icon: 'ri-customer-service-2-line',
       title: '24/7 Support',
-      description: 'Ongoing maintenance and updates included. Your website stays fresh, secure, and running smoothly.'
+      description: 'Ongoing maintenance and updates included. Your website stays fresh, secure, and running smoothly.',
+      link: '/services#support'
     },
     {
       icon: 'ri-bar-chart-line',
       title: 'Analytics & Insights',
-      description: 'Track your success with detailed analytics. Know your customers and grow your business smarter.'
+      description: 'Track your success with detailed analytics. Know your customers and grow your business smarter.',
+      link: '/services#analytics'
     }
   ];
 
@@ -65,15 +85,23 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div 
+            <a 
               key={index}
-              className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-2"
+              href={service.link}
+              className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-2 block"
               style={{
                 boxShadow: '0 10px 30px rgba(15, 23, 42, 0.4), inset 0 1px 0 rgba(148, 163, 184, 0.1)'
               }}
             >
+              {/* NEW Badge */}
+              {service.isNew && (
+                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+                  NEW
+                </div>
+              )}
+              
               {/* Hover Glow Effect */}
               <div 
                 className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"
@@ -117,7 +145,7 @@ export default function Services() {
               <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full opacity-60 group-hover:opacity-100 group-hover:scale-150 transition-all duration-300" style={{
                 boxShadow: '0 0 10px rgba(34, 211, 238, 0.8)'
               }}></div>
-            </div>
+            </a>
           ))}
         </div>
 

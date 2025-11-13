@@ -5,10 +5,24 @@ import { useState } from 'react';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
+    { 
+      name: 'Services', 
+      href: '/services',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'All Services', href: '/services' },
+        { name: 'Web Development', href: '/services#web-development' },
+        { name: 'E-commerce Solutions', href: '/services#ecommerce' },
+        { name: 'Mobile Apps', href: '/services#mobile-apps' },
+        { name: 'Social Media Management', href: '/social-media-management' },
+        { name: 'CCTV & Security Systems', href: '/cctv-security-systems' },
+        { name: 'SEO Optimization', href: '/services#seo' },
+      ]
+    },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Tools', href: '/tools' },
     { name: 'About', href: '/about' },
@@ -21,6 +35,7 @@ export default function Navigation() {
   // Close mobile menu when clicking a link
   const handleLinkClick = () => {
     setIsMenuOpen(false);
+    setIsServicesOpen(false);
   };
 
   return (
@@ -53,14 +68,46 @@ export default function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="relative text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm group cursor-pointer"
-                >
-                  {item.name}
-                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
-                </Link>
+                item.hasDropdown ? (
+                  <div 
+                    key={item.name} 
+                    className="relative group"
+                    onMouseEnter={() => setIsServicesOpen(true)}
+                    onMouseLeave={() => setIsServicesOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className="relative text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm cursor-pointer flex items-center gap-1"
+                    >
+                      {item.name}
+                      <i className="ri-arrow-drop-down-line text-lg"></i>
+                      <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
+                    </Link>
+                    {/* Dropdown Menu */}
+                    <div className={`absolute top-full left-0 mt-2 w-64 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+                      isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                    }`}>
+                      {item.dropdownItems?.map((dropdownItem, index) => (
+                        <Link
+                          key={index}
+                          href={dropdownItem.href}
+                          className="block px-4 py-3 text-slate-300 hover:bg-slate-800 hover:text-indigo-400 transition-all duration-200 text-sm border-b border-slate-800/50 last:border-0"
+                        >
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="relative text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm group cursor-pointer"
+                  >
+                    {item.name}
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
+                  </Link>
+                )
               ))}
             </div>
 
@@ -94,14 +141,40 @@ export default function Navigation() {
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={handleLinkClick}
-                    className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm py-2 cursor-pointer"
-                  >
-                    {item.name}
-                  </Link>
+                  item.hasDropdown ? (
+                    <div key={item.name}>
+                      <button
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        className="flex items-center justify-between w-full text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm py-2"
+                      >
+                        <span>{item.name}</span>
+                        <i className={`ri-arrow-drop-${isServicesOpen ? 'up' : 'down'}-line text-xl`}></i>
+                      </button>
+                      {isServicesOpen && (
+                        <div className="ml-4 mt-2 space-y-2">
+                          {item.dropdownItems?.map((dropdownItem, index) => (
+                            <Link
+                              key={index}
+                              href={dropdownItem.href}
+                              onClick={handleLinkClick}
+                              className="block text-slate-400 hover:text-indigo-400 transition-colors duration-300 text-sm py-1"
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={handleLinkClick}
+                      className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium text-sm py-2 cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  )
                 ))}
                 <a
                   href="https://wa.me/254104613770?text=Hi! I'm interested in a professional website for my business."
