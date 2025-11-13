@@ -1,7 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import AnimatedGradientBg from './AnimatedGradientBg';
+import ParticleNetwork from './ParticleNetwork';
+import { ParallaxProvider, MouseTilt, ParallaxLayer } from './ParallaxProvider';
+
+// Dynamic import for 3D orb to avoid SSR issues
+const FloatingOrb = dynamic(() => import('./FloatingOrb'), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0" />
+});
 
 // Custom hook for animated counters
 function useAnimatedCounter(end: number, duration: number = 2000, delay: number = 0) {
@@ -60,43 +71,92 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative flex items-center justify-center text-white overflow-hidden py-16 sm:py-20 md:py-24 w-full">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-4 sm:left-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
-        <div className="absolute top-40 right-4 sm:right-32 w-1 h-1 bg-blue-300 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-ping delay-1000 opacity-40"></div>
-        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-500"></div>
+    <ParallaxProvider>
+      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative flex items-center justify-center text-white overflow-hidden py-16 sm:py-20 md:py-24 w-full">
+        {/* 3D Floating Orb */}
+        <div className="absolute inset-0 pointer-events-none">
+          <FloatingOrb className="opacity-60" />
+        </div>
         
-        {/* Grid Pattern */}
+        {/* Enhanced Animated Background Layers - More Visible */}
+        <ParallaxLayer speed={0.2} className="absolute inset-0">
+          <AnimatedGradientBg variant="waves" opacity={0.4} />
+        </ParallaxLayer>
+        
+        <ParallaxLayer speed={0.4} className="absolute inset-0">
+          <ParticleNetwork 
+            particleCount={50}
+            particleColor="rgba(147, 51, 234, 0.8)"
+            lineColor="rgba(59, 130, 246, 0.3)"
+            speed={0.5}
+            minDistance={200}
+          />
+        </ParallaxLayer>
+      
+      {/* Enhanced Visual Effects - Larger and More Prominent */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Larger glowing orbs */}
+        <div className="absolute top-20 left-4 sm:left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping opacity-80 shadow-lg shadow-cyan-400/50"></div>
+        <div className="absolute top-40 right-4 sm:right-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+        <div className="absolute bottom-32 left-1/4 w-5 h-5 bg-purple-400 rounded-full animate-ping animation-delay-1000 opacity-70 shadow-lg shadow-purple-400/50"></div>
+        <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-indigo-400 rounded-full animate-pulse animation-delay-2000 shadow-lg shadow-indigo-400/50"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-6 h-6 bg-pink-400 rounded-full animate-ping animation-delay-3000 opacity-60 shadow-lg shadow-pink-400/50"></div>
+        <div className="absolute top-1/2 left-10 w-3 h-3 bg-emerald-400 rounded-full animate-pulse animation-delay-1000 shadow-lg shadow-emerald-400/50"></div>
+        
+        {/* More Visible Grid Pattern */}
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(59, 130, 246, 0.2) 2px, transparent 2px),
+              linear-gradient(90deg, rgba(147, 51, 234, 0.2) 2px, transparent 2px)
             `,
-            backgroundSize: '50px 50px'
+            backgroundSize: '40px 40px'
           }}
         ></div>
+        
+        {/* Additional Glow Effects */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse-slower"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center max-w-5xl w-full">
-        {/* Main Hero Content - Streamlined and Professional */}
-        <div className="mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight px-2 sm:px-4">
-            Transform Your Business with{' '}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Exceptional Websites
-            </span>
-          </h2>
+        <MouseTilt maxTilt={2} className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center max-w-5xl w-full">
+          {/* Main Hero Content - Streamlined and Professional */}
+          <motion.div 
+            className="mb-8 sm:mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.h2 
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight px-2 sm:px-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Transform Your Business with{' '}
+              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Exceptional Websites
+              </span>
+            </motion.h2>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-slate-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 font-light">
-          Professional websites that work 24/7 to grow your business. Fast-loading, mobile-first, and designed to convert visitors into customers.
-          </p>
-        </div>
+            <motion.p 
+              className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-slate-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 font-light"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Professional websites that work 24/7 to grow your business. Fast-loading, mobile-first, and designed to convert visitors into customers.
+            </motion.p>
+          </motion.div>
 
-        {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 md:mb-20">
+          {/* Enhanced CTA Buttons with 3D effect */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 md:mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
           <Link
             href="#portfolio"
             className="group relative bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-600 text-white px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-auto border border-indigo-500/30"
@@ -120,7 +180,7 @@ export default function Hero() {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </a>
-        </div>
+          </motion.div>
 
         {/* Enhanced Stats Section with Animated Counters */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-2 sm:px-4">
@@ -198,7 +258,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
+        </MouseTilt>
 
       {/* Refined Scroll Indicator */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2">
@@ -219,6 +279,7 @@ export default function Hero() {
           }
         }
       `}</style>
-    </section>
+      </section>
+    </ParallaxProvider>
   );
 }

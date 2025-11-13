@@ -4,6 +4,8 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton';
 import LiveChat from '../../components/LiveChat';
+import SurveillanceGrid from '../../components/SurveillanceGrid';
+import AnimatedGradientBg from '../../components/AnimatedGradientBg';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -129,9 +131,17 @@ export default function CCTVSecuritySystems() {
 
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white pb-20 pt-10 overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden">
+          {/* Surveillance Visual Effects */}
+          <SurveillanceGrid 
+            beamColor="rgba(34, 211, 238, 0.3)"
+            gridColor="rgba(99, 102, 241, 0.08)"
+            opacity={0.4}
+          />
+          <AnimatedGradientBg variant="orb" opacity={0.1} />
+          
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 right-20 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+            <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
           </div>
 
           <div className="container mx-auto px-6 relative z-10">

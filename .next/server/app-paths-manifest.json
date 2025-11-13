@@ -1,1 +1,6 @@
-{}
+{
+  "/page": "app/page.js",
+  "/cctv-security-systems/page": "app/cctv-security-systems/page.js",
+  "/social-media-management/page": "app/social-media-management/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

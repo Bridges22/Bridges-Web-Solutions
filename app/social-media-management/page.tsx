@@ -4,6 +4,8 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton';
 import LiveChat from '../../components/LiveChat';
+import FloatingSocialIcons from '../../components/FloatingSocialIcons';
+import AnimatedGradientBg from '../../components/AnimatedGradientBg';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -124,11 +126,15 @@ export default function SocialMediaManagement() {
 
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white pb-20 pt-10 overflow-hidden">
+          {/* Visual Enhancement Layers */}
+          <AnimatedGradientBg variant="mesh" opacity={0.15} />
+          <FloatingSocialIcons />
+          
           {/* Animated Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div className="absolute top-40 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-700"></div>
-            <div className="absolute -bottom-8 left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+            <div className="absolute top-40 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-3000"></div>
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
