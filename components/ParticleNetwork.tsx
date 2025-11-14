@@ -37,13 +37,17 @@ export default function ParticleNetwork({
       vx: number;
       vy: number;
       radius: number;
+      canvasWidth: number;
+      canvasHeight: number;
       
-      constructor(x: number, y: number) {
+      constructor(x: number, y: number, canvasWidth: number, canvasHeight: number) {
         this.x = x;
         this.y = y;
         this.vx = (Math.random() - 0.5) * speed;
         this.vy = (Math.random() - 0.5) * speed;
         this.radius = Math.random() * 2 + 1;
+        this.canvasWidth = canvasWidth;
+        this.canvasHeight = canvasHeight;
       }
       
       draw() {
@@ -57,10 +61,10 @@ export default function ParticleNetwork({
       
       update() {
         // Bounce off walls
-        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+        if (this.x + this.radius > this.canvasWidth || this.x - this.radius < 0) {
           this.vx = -this.vx;
         }
-        if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+        if (this.y + this.radius > this.canvasHeight || this.y - this.radius < 0) {
           this.vy = -this.vy;
         }
         
@@ -74,7 +78,7 @@ export default function ParticleNetwork({
       for (let i = 0; i < particleCount; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        particles.push(new Particle(x, y));
+        particles.push(new Particle(x, y, canvas.width, canvas.height));
       }
     };
     
