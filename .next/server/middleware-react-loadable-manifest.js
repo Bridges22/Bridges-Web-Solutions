@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\Hero.tsx -> ./FloatingOrb\":{\"id\":\"components\\\\Hero.tsx -> ./FloatingOrb\",\"files\":[\"static/chunks/_app-pages-browser_components_FloatingOrb_tsx.js\"]}}"
