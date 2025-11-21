@@ -130,7 +130,7 @@ export default function CallToAction() {
                       textShadow: '0 0 10px rgba(255, 255, 255, 0.05)'
                     }}
                   >
-                    Regular Price: Ksh 45,750
+                    Regular Price: Ksh 65,750
                   </div>
                   <div 
                     className="text-5xl font-bold text-yellow-400 mb-2"
@@ -138,7 +138,7 @@ export default function CallToAction() {
                       textShadow: '0 0 30px rgba(251, 191, 36, 0.8)'
                     }}
                   >
-                    Launch Price: Ksh 19,999
+                    Season Exclusive Price: Ksh 49,999
                   </div>
                   <div 
                     className="text-green-400 font-semibold text-lg"
@@ -146,7 +146,7 @@ export default function CallToAction() {
                       textShadow: '0 0 20px rgba(34, 197, 94, 0.4)'
                     }}
                   >
-                    Save Ksh 25,750 - This Month Only
+                    Save Ksh 15,750 - This Month Only
                   </div>
                 </div>
               </div>
