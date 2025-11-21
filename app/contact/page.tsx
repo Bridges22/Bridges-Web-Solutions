@@ -34,65 +34,34 @@ export default function ContactPage() {
     setSubmitStatus('');
 
     try {
-      console.log('Submitting form data:', formData);
+      console.log('Submitting form data to Web3Forms:', formData);
       
-      // Build the API URL based on environment
-      const apiUrl = process.env.NODE_ENV === 'production' 
-        ? '/api/contact'
-        : 'http://localhost:3000/api/contact';
+      // Prepare form data using FormData (Web3Forms recommended approach)
+      const form = new FormData();
+      form.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '');
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('phone', formData.phone || 'Not provided');
+      form.append('business', formData.business);
+      form.append('website', formData.website || 'None');
+      form.append('projectType', formData.projectType);
+      form.append('budget', formData.budget || 'Not specified');
+      form.append('timeline', formData.timeline || 'Not specified');
+      form.append('message', formData.message);
+      form.append('subject', `🚀 New Project Inquiry: ${formData.business} - ${formData.projectType}`);
+      form.append('from_name', formData.name);
       
-      const response = await fetch(apiUrl, {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: form
       });
 
+      const data = await response.json();
       console.log('Response status:', response.status);
-      
-      // Handle different response scenarios
-      if (response.status === 405) {
-        // Method not allowed - API route issue
-        console.error('API route not properly configured (405 Method Not Allowed)');
-        setSubmitStatus('api-error');
-        return;
-      }
-      
-      if (response.status === 404) {
-        // API route not found
-        console.error('API route not found (404)');
-        setSubmitStatus('api-error');
-        return;
-      }
+      console.log('Response data:', data);
 
-      // Try to parse JSON response
-      let responseData;
-      try {
-        const responseText = await response.text();
-        console.log('Raw response:', responseText);
-        
-        if (responseText.trim() === '') {
-          console.error('Empty response from server');
-          setSubmitStatus('api-error');
-          return;
-        }
-        
-        responseData = JSON.parse(responseText);
-        console.log('Response data:', responseData);
-      } catch (parseError) {
-        console.error('Failed to parse JSON response:', parseError);
-        console.error('Response was not valid JSON');
-        setSubmitStatus('api-error');
-        return;
-      }
-
-      if (response.ok) {
+      if (response.ok && data.success) {
         setSubmitStatus('success');
-        // Show different message if using fallback
-        if (responseData.fallback) {
-          console.log('Using fallback system - email service unavailable');
-        }
         setFormData({
           name: '',
           email: '',
@@ -106,13 +75,7 @@ export default function ContactPage() {
         });
       } else {
         setSubmitStatus('error');
-        console.error('API Error:', responseData);
-        // Log the full error for debugging
-        console.error('Full error details:', {
-          status: response.status,
-          statusText: response.statusText,
-          data: responseData
-        });
+        console.error('Web3Forms Error:', data.message || 'Unknown error');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
