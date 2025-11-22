@@ -1,0 +1,8 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="80" rx="18" fill="#1c1917" />
+  <rect x="10" y="10" width="180" height="60" rx="14" fill="#292524" stroke="#f97316" stroke-width="2" />
+  <circle cx="55" cy="40" r="18" fill="#f97316" opacity="0.9" />
+  <path d="M50 35h10M50 45h10M55 30v20" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+  <text x="92" y="40" fill="#fff7ed" font-size="20" font-weight="600" font-family="'Segoe UI', sans-serif">Rodriguez</text>
+  <text x="92" y="60" fill="#fdba74" font-size="13" letter-spacing="4" font-family="'Segoe UI', sans-serif">RESTAURANT</text>
+</svg>

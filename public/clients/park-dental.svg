@@ -1,0 +1,9 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="80" rx="18" fill="#0f172a" />
+  <rect x="8" y="8" width="184" height="64" rx="14" stroke="#34d399" stroke-width="2" fill="none" opacity="0.8" />
+  <circle cx="55" cy="40" r="18" fill="#34d399" opacity="0.15" />
+  <path d="M45 50c6-18 20-18 26 0" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" />
+  <path d="M50 36h4m8 0h4" stroke="#d1fae5" stroke-width="3" stroke-linecap="round" />
+  <text x="92" y="38" fill="#ecfccb" font-size="20" font-weight="600" font-family="'Segoe UI', sans-serif">Park</text>
+  <text x="92" y="58" fill="#bbf7d0" font-size="14" letter-spacing="4" font-family="'Segoe UI', sans-serif">DENTAL</text>
+</svg>

@@ -10,12 +10,13 @@ export default function ClientLogos() {
   }, []);
 
   const clients = [
-    { name: 'Rodriguez Family Restaurant', logo: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' },
-    { name: 'FitCore Gym', logo: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' },
-    { name: 'Bloom Boutique', logo: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' },
-    { name: 'Thompson Legal', logo: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' },
-    { name: 'Park Dental', logo: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' },
-    { name: 'Williams Construction', logo: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=100&q=80' }
+    { name: 'Rodriguez Family Restaurant', logo: '/clients/kombanijoint.png' },
+    { name: 'Rodriguez Family Restaurant', logo: '/clients/Aurum Advisory.jpg' },
+    { name: 'FitCore Gym', logo: '/clients/fitcore-gym.svg' },
+    { name: 'Bloom Boutique', logo: '/clients/bloom-boutique.svg' },
+    { name: 'Thompson Legal', logo: '/clients/thompson-legal.svg' },
+    { name: 'Park Dental', logo: '/clients/park-dental.svg' },
+    { name: 'Proline Dental', logo: '/clients/proline-dental.svg' }
   ];
 
   const certifications = [
