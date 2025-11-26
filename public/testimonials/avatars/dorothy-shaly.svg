@@ -1,0 +1,10 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-ds" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#0f172a" stroke="url(#grad-ds)" stroke-width="8"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#ecfeff" font-family="'Segoe UI', sans-serif" font-size="40" font-weight="600">DS</text>
+</svg>

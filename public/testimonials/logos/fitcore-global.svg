@@ -1,0 +1,13 @@
+<svg width="140" height="50" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="140" height="50" rx="12" fill="#041423" />
+  <rect x="2" y="2" width="136" height="46" rx="10" stroke="url(#fitGrad)" stroke-width="2" fill="none" />
+  <path d="M20 35V15h10l4 6 4-6h10v20h-8V23l-4 6-4-6v12z" fill="#22d3ee" />
+  <text x="62" y="24" fill="#e0f2fe" font-size="14" font-weight="600" font-family="'Segoe UI', sans-serif">FitCore</text>
+  <text x="62" y="38" fill="#7dd3fc" font-size="10" letter-spacing="3" font-family="'Segoe UI', sans-serif">GLOBAL</text>
+</svg>

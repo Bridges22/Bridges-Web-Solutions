@@ -1,0 +1,14 @@
+<svg width="140" height="50" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nyaliGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a5b4fc" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="140" height="50" rx="14" fill="#0f172a" />
+  <rect x="2" y="2" width="136" height="46" rx="12" stroke="url(#nyaliGrad)" stroke-width="2" fill="none" />
+  <path d="M30 15c8 4 8 16 0 20c-8-4-8-16 0-20" fill="none" stroke="#c7d2fe" stroke-width="3" stroke-linecap="round" />
+  <path d="M23 24c5 2 9 2 14 0" stroke="#c7d2fe" stroke-width="2" stroke-linecap="round" />
+  <text x="60" y="23" fill="#e0f2fe" font-size="14" font-weight="600" font-family="'Segoe UI', sans-serif">Nyali Med Spa</text>
+  <text x="60" y="38" fill="#93c5fd" font-size="10" letter-spacing="2" font-family="'Segoe UI', sans-serif">WELLNESS</text>
+</svg>

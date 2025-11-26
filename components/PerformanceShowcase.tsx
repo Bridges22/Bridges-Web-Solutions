@@ -23,39 +23,39 @@ export default function PerformanceShowcase() {
   const performanceData: PerformanceMetric[] = [
     {
       id: '1',
-      website: 'Savannah Restaurant',
-      domain: 'savannahnairobi.co.ke',
+      website: 'Kombani Joint Restaurant',
+      domain: 'kombanijoint.co.ke',
       loadTime: 1.2,
       performanceScore: 98,
       seoScore: 95,
       accessibilityScore: 100,
       bestPracticesScore: 92,
       industry: 'Restaurant',
-      location: 'Nairobi, Kenya'
+      location: 'Kombani, Waa, Matuga, Kwale, Coast, Kenya'
     },
     {
       id: '2',
-      website: 'FitLife Gym',
-      domain: 'fitlifekenya.com',
+      website: 'MOM3NTUM Gym',
+      domain: 'www.mom3ntum.com',
       loadTime: 0.9,
       performanceScore: 96,
       seoScore: 98,
       accessibilityScore: 94,
       bestPracticesScore: 100,
       industry: 'Fitness',
-      location: 'Mombasa, Kenya'
+      location: 'Nairobi, Kenya'
     },
     {
       id: '3',
-      website: 'Elegant Boutique',
-      domain: 'elegantboutique.co.ke',
+      website: 'Shamiz Designers Boutique',
+      domain: 'www.shamizdesigner.co.ke',
       loadTime: 1.1,
       performanceScore: 94,
       seoScore: 96,
       accessibilityScore: 98,
       bestPracticesScore: 95,
       industry: 'Fashion',
-      location: 'Kisumu, Kenya'
+      location: 'Bamburi and Diani, Kenya'
     }
   ];
 
