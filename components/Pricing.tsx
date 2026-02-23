@@ -115,21 +115,19 @@ export default function Pricing() {
           <div className="inline-flex bg-slate-800/60 rounded-full p-1 border border-slate-700/50">
             <button
               onClick={() => setBillingCycle('project')}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
-                billingCycle === 'project'
+              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${billingCycle === 'project'
                   ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               One-time Project
             </button>
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
-                billingCycle === 'monthly'
+              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${billingCycle === 'monthly'
                   ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Monthly Payments
             </button>
@@ -141,9 +139,8 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={plan.id}
-              className={`relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-2 ${
-                plan.popular ? 'ring-2 ring-purple-500/50 scale-105' : ''
-              }`}
+              className={`relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-2 ${plan.popular ? 'ring-2 ring-purple-500/50 scale-105' : ''
+                }`}
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 200}ms both`
               }}
@@ -161,7 +158,7 @@ export default function Pricing() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                   <p className="text-gray-400 mb-6">{plan.description}</p>
-                  
+
                   <div className="mb-4">
                     <div className="flex items-center justify-center gap-2">
                       <span className={`text-4xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>

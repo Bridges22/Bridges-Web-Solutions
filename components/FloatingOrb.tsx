@@ -8,7 +8,7 @@ import * as THREE from 'three';
 function AnimatedSphere() {
   const meshRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<any>(null);
-  
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.2;
@@ -22,13 +22,13 @@ function AnimatedSphere() {
       );
     }
   });
-  
+
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.8}>
       <ambientLight intensity={0.3} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <directionalLight position={[-10, -10, -5]} intensity={0.4} color="#9333ea" />
-      
+
       <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5}>
         <MeshDistortMaterial
           ref={materialRef}
@@ -42,7 +42,7 @@ function AnimatedSphere() {
           emissiveIntensity={0.2}
         />
       </Sphere>
-      
+
       {/* Outer glow sphere */}
       <Sphere args={[1, 32, 32]} scale={2.7}>
         <meshBasicMaterial
@@ -64,8 +64,10 @@ export default function FloatingOrb({ className = '' }: FloatingOrbProps) {
   return (
     <div className={`absolute inset-0 ${className}`}>
       <Canvas
+        dpr={[1, 1.5]} // Limit pixel ratio for performance
+        performance={{ min: 0.5 }} // Allow downgrading on slow devices
         camera={{ position: [0, 0, 5], fov: 45 }}
-        gl={{ 
+        gl={{
           antialias: true,
           alpha: true,
           powerPreference: "high-performance",

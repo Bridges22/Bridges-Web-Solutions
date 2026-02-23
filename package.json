@@ -12,7 +12,9 @@
     "@react-three/drei": "^9.88.0",
     "@react-three/fiber": "^8.15.0",
     "@supabase/supabase-js": "^2.56.0",
-    "framer-motion": "^10.16.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.562.0",
     "next": "14.2.14",
     "nodemailer": "^6.9.8",
     "postprocessing": "^6.37.8",
@@ -20,6 +22,7 @@
     "react-dom": "^18",
     "react-intersection-observer": "^10.0.0",
     "resend": "^6.4.2",
+    "tailwind-merge": "^3.4.0",
     "three": "^0.180.0"
   },
   "devDependencies": {

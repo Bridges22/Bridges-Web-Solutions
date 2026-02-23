@@ -12,8 +12,8 @@ interface TiltCardProps {
   glowColor?: string;
 }
 
-export default function TiltCard({ 
-  children, 
+export default function TiltCard({
+  children,
   className = '',
   maxTilt = 10,
   scale = 1.05,
@@ -22,41 +22,50 @@ export default function TiltCard({
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const rotateX = useTransform(y, [-0.5, 0.5], [maxTilt, -maxTilt]);
   const rotateY = useTransform(x, [-0.5, 0.5], [-maxTilt, maxTilt]);
-  
+
   const springConfig = { damping: 10, stiffness: 100 };
   const springRotateX = useSpring(rotateX, springConfig);
   const springRotateY = useSpring(rotateY, springConfig);
-  
+
+  /* Optimization: Cache rect to avoid layout thrashing on every mousemove */
+  const rectRef = useRef<DOMRect | null>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (ref.current) {
+      rectRef.current = ref.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    
-    const rect = ref.current.getBoundingClientRect();
+    if (!rectRef.current) return;
+
+    // Use cached rect
+    const rect = rectRef.current;
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
-    const mouseX = (e.clientX - centerX) / (rect.width / 2);
-    const mouseY = (e.clientY - centerY) / (rect.height / 2);
-    
+
+    // Calculate normalized mouse position (-0.5 to 0.5)
+    const mouseX = (e.clientX - centerX) / rect.width;
+    const mouseY = (e.clientY - centerY) / rect.height;
+
     x.set(mouseX);
     y.set(mouseY);
   };
-  
+
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
     setIsHovered(false);
+    rectRef.current = null;
   };
-  
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-  
+
   return (
     <motion.div
       ref={ref}
@@ -86,20 +95,20 @@ export default function TiltCard({
           <motion.div
             className="absolute inset-0 rounded-3xl"
             animate={{
-              boxShadow: isHovered 
-                ? `0 20px 40px -15px ${glowColor}` 
+              boxShadow: isHovered
+                ? `0 20px 40px -15px ${glowColor}`
                 : '0 10px 30px -10px rgba(0, 0, 0, 0.3)'
             }}
             transition={{ duration: 0.3 }}
             style={{ zIndex: -1 }}
           />
         )}
-        
+
         {/* Content with 3D effect */}
         <div style={{ transform: "translateZ(50px)" }}>
           {children}
         </div>
-        
+
         {/* Shine effect */}
         {isHovered && (
           <motion.div
