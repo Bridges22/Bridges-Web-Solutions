@@ -134,9 +134,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Transform Your Business with{' '}
+              Scale Your Operations with{' '}
               <span className="block mt-2 sm:inline sm:mt-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Exceptional Websites
+                Custom Digital Systems
               </span>
             </motion.h1>
 
@@ -146,7 +146,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Professional websites that work 24/7 to grow your business. Fast-loading, mobile-first, and designed to convert visitors into customers.
+              We build intelligent web platforms, portals, and software infrastructure to automate your daily operations and scale your impact in Kenya.
             </motion.p>
           </motion.div>
 

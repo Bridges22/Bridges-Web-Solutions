@@ -1,5 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Pricing | Bridges Web Solutions',
+  description: 'Transparent pricing for web design, e-commerce, and digital systems in Kenya. No hidden costs. Choose the perfect package for your business needs.',
+};
 import Navigation from '../../components/Navigation';
 import Pricing from '../../components/Pricing';
 import FAQ from '../../components/FAQ';

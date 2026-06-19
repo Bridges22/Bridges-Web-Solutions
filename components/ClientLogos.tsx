@@ -20,8 +20,8 @@ export default function ClientLogos() {
   ];
 
   const certifications = [
-    { name: 'Google Partner', icon: 'ri-google-line', color: 'from-blue-500 to-green-500' },
-    { name: 'SSL Secured', icon: 'ri-shield-check-line', color: 'from-green-500 to-emerald-500' },
+    { name: 'M-Pesa Integrated', icon: 'ri-phone-line', color: 'from-green-500 to-emerald-500' },
+    { name: 'SSL Secured', icon: 'ri-shield-check-line', color: 'from-blue-500 to-indigo-500' },
     { name: 'Mobile First', icon: 'ri-smartphone-line', color: 'from-purple-500 to-pink-500' },
     { name: 'SEO Optimized', icon: 'ri-search-line', color: 'from-orange-500 to-red-500' }
   ];

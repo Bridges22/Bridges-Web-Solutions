@@ -1,5 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Our Solutions & Services | Bridges Web Solutions',
+  description: 'Explore our comprehensive web design, digital systems, and automation solutions. We build technology that powers Kenyan businesses.',
+};
 import Navigation from '../../components/Navigation';
 import Services from '../../components/Services';
 import CallToAction from '../../components/CallToAction';

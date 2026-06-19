@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Handle GET request for testing
-  if (req.method === 'GET') {
+  if (req.method === 'GET') {1
     return res.status(200).json({
       message: 'Contact API is working (Vercel Function)',
       timestamp: new Date().toISOString(),

@@ -224,7 +224,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
-                        placeholder="(555) 123-4567"
+                        placeholder="e.g. 0712 345 678"
                       />
                     </div>
 
@@ -370,8 +370,18 @@ export default function ContactPage() {
                       <i className="ri-phone-line text-blue-600"></i>
                     </div>
                     <div>
-                      <div className="font-medium text-gray-900">Phone</div>
+                      <div className="font-medium text-gray-900">Phone (Call)</div>
                       <div className="text-gray-600">+254 705784274</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <i className="ri-whatsapp-line text-green-600"></i>
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">WhatsApp</div>
+                      <div className="text-gray-600">+254 104613770</div>
                     </div>
                   </div>
 
@@ -382,16 +392,6 @@ export default function ContactPage() {
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
                       <div className="text-gray-600">bridges.cybersec@gmail.com</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                      <i className="ri-whatsapp-line text-green-600"></i>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900">WhatsApp</div>
-                      <div className="text-gray-600">Quick responses</div>
                     </div>
                   </div>
                 </div>

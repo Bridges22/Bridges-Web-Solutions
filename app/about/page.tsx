@@ -1,5 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'About Us | Bridges Web Solutions',
+  description: 'Learn about Bridges Web Solutions, Kenya\'s premier tech partner building custom digital systems, websites, and business automation software.',
+};
 import Navigation from '../../components/Navigation';
 import Benefits from '../../components/Benefits';
 import ClientLogos from '../../components/ClientLogos';
@@ -58,13 +62,6 @@ export default function AboutPage() {
                         src="/images/team/WhatsApp Image 2025-10-06 at 14.14.30_fc5741c0.jpg"
                         alt="Bridges Mwashighadi - Founder & Lead Developer"
                         className="w-full h-full rounded-full object-cover border-4 border-gradient-to-r from-cyan-500 to-blue-500 shadow-xl"
-                        onError={(e) => {
-                          // Fallback to gradient circle with icon if image fails to load
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
                       />
                       <div 
                         className="w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center absolute top-0 left-0 shadow-xl hidden"

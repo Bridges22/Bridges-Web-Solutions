@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   // Handle scroll effect
@@ -20,6 +20,18 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', href: '/' },
+    {
+      name: 'Solutions',
+      href: '/solutions',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'All Solutions', href: '/solutions' },
+        { name: 'Tech Stack', href: '/tech-stack' },
+        { name: 'Maintenance & Support', href: '/maintenance' },
+        { name: 'AI & Automation', href: '/ai-automation' },
+        { name: 'Interactive Demos', href: '/demos' },
+      ]
+    },
     {
       name: 'Services',
       href: '/services',
@@ -43,10 +55,9 @@ export default function Navigation() {
     { name: 'Contact', href: '/contact' },
   ];
 
-  // Close mobile menu when clicking a link
   const handleLinkClick = () => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
+    setActiveDropdown(null);
   };
 
   return (
@@ -86,8 +97,8 @@ export default function Navigation() {
                   <div
                     key={item.name}
                     className="relative group"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <Link
                       href={item.href}
@@ -98,7 +109,7 @@ export default function Navigation() {
                       <div className="absolute bottom-3 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
                     </Link>
                     {/* Dropdown Menu */}
-                    <div className={`absolute top-full left-0 w-64 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 transform origin-top z-[100] ${isServicesOpen ? 'opacity-100 visible scale-y-100' : 'opacity-0 invisible scale-y-95'
+                    <div className={`absolute top-full left-0 w-64 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 transform origin-top z-[100] ${activeDropdown === item.name ? 'opacity-100 visible scale-y-100' : 'opacity-0 invisible scale-y-95'
                       }`}>
                       {item.dropdownItems?.map((dropdownItem, index) => (
                         <Link
@@ -167,17 +178,17 @@ export default function Navigation() {
                   item.hasDropdown ? (
                     <div key={item.name} className="border-b border-slate-800/50 last:border-0">
                       <button
-                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                         className="flex items-center justify-between w-full text-slate-200 hover:text-indigo-400 transition-colors duration-300 font-semibold text-base py-3 px-3 rounded-lg hover:bg-slate-800/50"
                       >
                         <span className="flex items-center gap-3">
                           <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span>
                           {item.name}
                         </span>
-                        <i className={`ri-arrow-drop-${isServicesOpen ? 'up' : 'down'}-line text-xl transition-transform duration-300`}></i>
+                        <i className={`ri-arrow-drop-${activeDropdown === item.name ? 'up' : 'down'}-line text-xl transition-transform duration-300`}></i>
                       </button>
                       <AnimatePresence>
-                        {isServicesOpen && (
+                        {activeDropdown === item.name && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}

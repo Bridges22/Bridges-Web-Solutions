@@ -4,6 +4,7 @@
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import ClientLogos from '../components/ClientLogos';
+import DigitalSystems from '../components/DigitalSystems';
 import NewServices from '../components/NewServices';
 import FeaturedProjects from '../components/FeaturedProjects';
 import Testimonials from '../components/Testimonials';
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="min-h-screen overflow-x-hidden w-full">
         <Hero />
         <ClientLogos />
+        <DigitalSystems />
         <NewServices />
         <FeaturedProjects />
         <Testimonials />

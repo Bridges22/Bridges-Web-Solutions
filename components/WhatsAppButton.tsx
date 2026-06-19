@@ -26,7 +26,7 @@ export default function WhatsAppButton() {
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 left-6 md:left-auto md:right-28 z-50">
       {isExpanded && (
         <div 
           className="mb-4 bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 max-w-xs border border-slate-700/50"

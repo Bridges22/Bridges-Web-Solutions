@@ -21,13 +21,13 @@ const geistMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bridges Web Solutions | Professional Web Design & Development in Kenya",
-  description: "Kenya's leading web design & development agency. We create fast, beautiful, and results-driven websites that help businesses grow. Get your free quote today!",
-  keywords: ["web design Kenya", "website development Nairobi", "affordable websites Kenya", "professional web design", "ecommerce websites"],
+  title: "Bridges Web Solutions | Web Design, Digital Systems & Infrastructure in Kenya",
+  description: "Kenya's leading technology partner. We build custom digital systems, e-commerce platforms, school portals, and web applications that automate and scale businesses.",
+  keywords: ["digital systems Kenya", "web design Nairobi", "custom software development", "ecommerce websites", "school portals", "booking systems", "tech infrastructure"],
   authors: [{ name: "Bridges Web Solutions" }],
   openGraph: {
-    title: "Bridges Web Solutions | Professional Web Design & Development",
-    description: "Transform your online presence with our custom web design and development services in Kenya. Mobile-friendly, fast, and affordable websites.",
+    title: "Bridges Web Solutions | Web Design & Digital Systems",
+    description: "Transform your operations with custom software and intelligent web platforms built for Kenyan businesses and communities.",
     url: "https://bridgeswebsolutions.top",
     siteName: "Bridges Web Solutions",
     locale: "en_KE",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bridges Web Solutions | Web Design & Development",
-    description: "Professional web design and development services in Kenya. Let's build something amazing together!",
+    title: "Bridges Web Solutions | Digital Systems & Web Design",
+    description: "We build custom digital systems, portals, and software infrastructure to automate your daily operations.",
     creator: "@BridgesWebKE",
   },
   robots: {
@@ -75,9 +75,9 @@ const jsonLd = {
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+254XXXXXXXXX",
+    "telephone": "+254104613770",
     "contactType": "customer service",
-    "email": "info@bridgeswebsolutions.top",
+    "email": "bridges.cybersec@gmail.com",
     "availableLanguage": ["English", "Swahili"]
   },
   "sameAs": [

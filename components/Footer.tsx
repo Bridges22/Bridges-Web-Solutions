@@ -48,7 +48,7 @@ export default function Footer() {
                 textShadow: '0 0 10px rgba(255, 255, 255, 0.05)'
               }}
             >
-              Professional websites that work 24/7 to grow your business. We bridge the gap between your vision and online success.
+              We build websites, automation, security, and digital systems that help Kenyan businesses sell, serve, and operate better every day.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -181,7 +181,19 @@ export default function Footer() {
                 >
                   <i className="ri-phone-line text-cyan-400"></i>
                 </div>
-                <span>+254 705784274</span>
+                <span>Call: +254 705784274</span>
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div
+                  className="w-8 h-8 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700/50"
+                  style={{
+                    boxShadow: '0 0 10px rgba(34, 197, 94, 0.2)'
+                  }}
+                >
+                  <i className="ri-whatsapp-line text-green-400"></i>
+                </div>
+                <span>WhatsApp: +254 104613770</span>
               </div>
 
               <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -193,7 +205,7 @@ export default function Footer() {
                 >
                   <i className="ri-mail-line text-cyan-400"></i>
                 </div>
-                <span>bridges.cybersec@gmail.com</span>
+                <span>Email: bridges.cybersec@gmail.com</span>
               </div>
             </div>
           </div>
