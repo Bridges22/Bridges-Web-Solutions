@@ -90,17 +90,23 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3">
-              {['Website Design', 'E-commerce', 'SEO Optimization', 'Mobile Development', 'Maintenance'].map((service, index) => (
+              {[
+                { name: 'Website Design', href: '/services#services' },
+                { name: 'E-commerce', href: '/services#ecommerce' },
+                { name: 'SEO Optimization', href: '/services#seo' },
+                { name: 'Mobile Development', href: '/services#mobile-websites' },
+                { name: 'Maintenance', href: '/services#support' }
+              ].map((service, index) => (
                 <li key={index}>
                   <Link
-                    href="#services"
+                    href={service.href}
                     className="group text-gray-400 hover:text-cyan-400 transition-all duration-300 cursor-pointer flex items-center gap-2"
                   >
                     <div className="w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
                       boxShadow: '0 0 8px rgba(34, 211, 238, 0.6)'
                     }}></div>
                     <span className="group-hover:translate-x-2 transition-transform duration-300">
-                      {service}
+                      {service.name}
                     </span>
                   </Link>
                 </li>

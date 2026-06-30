@@ -77,6 +77,7 @@ export default function ParticleNetwork({
 
     const init = () => {
       particles = [];
+      if (window.innerWidth < 768) return;
       for (let i = 0; i < particleCount; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
@@ -85,6 +86,7 @@ export default function ParticleNetwork({
     };
 
     const connectParticles = () => {
+      if (window.innerWidth < 768) return;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -107,6 +109,10 @@ export default function ParticleNetwork({
 
     const animate = () => {
       if (!isVisible) return; // Skip if not visible
+      if (window.innerWidth < 768) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -120,6 +126,11 @@ export default function ParticleNetwork({
     };
 
     const resize = () => {
+      if (window.innerWidth < 768) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = [];
+        return;
+      }
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       init();

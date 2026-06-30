@@ -63,20 +63,29 @@ function useAnimatedCounter(end: number, duration: number = 2000, delay: number 
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const projectsCounter = useAnimatedCounter(50, 2000, 0);
   const satisfactionCounter = useAnimatedCounter(100, 2000, 200);
 
   useEffect(() => {
     setMounted(true);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <ParallaxProvider>
       <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative flex items-center justify-center text-white overflow-hidden py-24 sm:py-28 md:py-32 w-full">
-        {/* 3D Floating Orb */}
-        <div className="absolute inset-0 pointer-events-none">
-          <FloatingOrb className="opacity-40 sm:opacity-60" />
-        </div>
+        {/* 3D Floating Orb - Render only on Desktop for performance & crash prevention */}
+        {!isMobile && (
+          <div className="absolute inset-0 pointer-events-none">
+            <FloatingOrb className="opacity-40 sm:opacity-60" />
+          </div>
+        )}
 
         {/* Enhanced Animated Background Layers */}
         <ParallaxLayer speed={0.2} className="absolute inset-0">

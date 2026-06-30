@@ -89,6 +89,7 @@ export default function Services() {
           {services.map((service, index) => (
             <a 
               key={index}
+              id={service.link.includes('#') ? service.link.split('#')[1] : undefined}
               href={service.link}
               className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-2 block"
               style={{

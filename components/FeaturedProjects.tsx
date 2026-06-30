@@ -45,7 +45,7 @@ export default function FeaturedProjects() {
       category: 'E-commerce',
       description: 'Transformed local boutique into thriving online business with custom e-commerce platform.',
       url: 'https://boutique.co.ke/',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=75',
       challenge: 'Physical store only, missing out on online sales opportunities',
       solution: 'Full e-commerce platform with inventory management and payment processing',
       result: '200% revenue increase with 60% of sales now coming from online',
@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 
