@@ -195,8 +195,8 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Bridges Web Solutions <onboarding@resend.dev>', // You'll need to verify your domain
-      to: 'bridges.cybersec@gmail.com',
+      from: 'KWITZEL DIGITAL VENTURES <onboarding@resend.dev>', // Verify a branded sender domain before production launch.
+      to: process.env.CONTACT_EMAIL || 'hello@kwitzeldigitalventures.co.ke',
       subject: `🚀 New Project Inquiry: ${business} - ${projectType}`,
       replyTo: email,
       html: emailHtml,

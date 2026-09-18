@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Bridges Web Solutions',
-  description: 'Learn about Bridges Web Solutions, Kenya\'s premier tech partner building custom digital systems, websites, and business automation software.',
+  title: 'About Us | KWITZEL DIGITAL VENTURES',
+  description: 'Learn about KWITZEL DIGITAL VENTURES, a technology partner for secure systems, software, infrastructure and digital growth.',
 };
 import Navigation from '../../components/Navigation';
 import Benefits from '../../components/Benefits';
@@ -25,11 +25,11 @@ export default function AboutPage() {
                 <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                   About{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                    Bridges Web Solutions
+                    KWITZEL DIGITAL VENTURES
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  We're passionate about helping businesses succeed online. With years of experience and a commitment to excellence, we transform ideas into powerful digital experiences that drive real results.
+                  We help businesses, schools and institutions turn technology into a dependable operational advantage—from software and security to infrastructure and digital growth.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6 mb-8">
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/+254104613770?text=Hi! I'd like to learn more about your web development services."
+                  href="https://wa.me/254104613770?text=Hello%20KWITZEL%20DIGITAL%20VENTURES%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20technology%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105"
@@ -77,7 +77,7 @@ export default function AboutPage() {
                     <p className="text-cyan-400 font-semibold">Founder & Lead Developer</p>
                   </div>
                   <p className="text-gray-300 text-center leading-relaxed">
-                    "I believe every business deserves a professional online presence. My mission is to help entrepreneurs and businesses succeed through powerful, user-friendly websites that convert visitors into customers."
+                    "I believe every organisation deserves technology that is practical, secure and built around the way its people work. Our mission is to help clients grow with confidence through dependable digital solutions."
                   </p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  To empower businesses of all sizes with professional, high-converting websites that drive growth, increase revenue, and establish strong online presence. We believe every business deserves access to world-class web development.
+                  To empower organisations of every size with secure, dependable software, digital systems and infrastructure that improve service delivery and sustainable growth.
                 </p>
               </div>
 
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  To be the leading web development partner for businesses across Kenya and beyond, known for delivering exceptional results, outstanding customer service, and innovative solutions that transform businesses.
+                  To be a trusted technology partner across Kenya and beyond, known for practical innovation, exceptional service and solutions that make organisations stronger.
                 </p>
               </div>
             </div>

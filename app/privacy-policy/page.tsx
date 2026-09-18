@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Privacy Policy | Bridges Web Solutions',
-  description: 'Learn how Bridges Web Solutions collects, uses, and protects your personal information in accordance with our privacy policy.',
+  title: 'Privacy Policy | KWITZEL DIGITAL VENTURES',
+  description: 'Learn how KWITZEL DIGITAL VENTURES collects, uses, and protects your personal information.',
 };
 
 export default function PrivacyPolicy() {
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
           <p className="text-gray-600 mb-8">Effective Date: October 6, 2025</p>
           
           <p className="mb-6 text-gray-700">
-            At Bridges Web Solutions, accessible from <Link href="https://bridgeswebsolutions.top" className="text-blue-600 hover:underline">https://bridgeswebsolutions.top</Link>, your privacy is one of our top priorities. This Privacy Policy document explains what information we collect, how we use it, and how we keep it secure.
+            At KWITZEL DIGITAL VENTURES, your privacy is one of our top priorities. This Privacy Policy explains what information we collect, how we use it, and how we keep it secure.
           </p>
 
           <section className="mb-8">
@@ -102,23 +102,23 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">8. Contact Us</h2>
             <address className="not-italic text-gray-700">
-              <p className="font-medium">Bridges Web Solutions</p>
+              <p className="font-medium">KWITZEL DIGITAL VENTURES</p>
               <p>
                 Email: 
                 <Link 
-                  href="mailto:bridges.cybersec@gmail.com" 
+                  href="mailto:hello@kwitzeldigitalventures.co.ke"
                   className="text-blue-600 hover:underline"
                 >
-                  bridges.cybersec@gmail.com
+                  hello@kwitzeldigitalventures.co.ke
                 </Link>
               </p>
               <p>
                 Website: 
                 <Link 
-                  href="https://bridgeswebsolutions.top" 
+                  href="https://kwitzeldigitalventures.co.ke"
                   className="text-blue-600 hover:underline"
                 >
-                  https://bridgeswebsolutions.top
+                  https://kwitzeldigitalventures.co.ke
                 </Link>
               </p>
             </address>

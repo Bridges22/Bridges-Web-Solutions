@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, Pacifico } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
-const pacifico = Pacifico({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-pacifico",
-});
+import { brand } from '../lib/brand';
 
 const geistSans = Inter({
   variable: "--font-geist-sans",
@@ -21,23 +15,25 @@ const geistMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bridges Web Solutions | Web Design, Digital Systems & Infrastructure in Kenya",
-  description: "Kenya's leading technology partner. We build custom digital systems, e-commerce platforms, school portals, and web applications that automate and scale businesses.",
-  keywords: ["digital systems Kenya", "web design Nairobi", "custom software development", "ecommerce websites", "school portals", "booking systems", "tech infrastructure"],
-  authors: [{ name: "Bridges Web Solutions" }],
+  metadataBase: new URL(brand.siteUrl),
+  title: { default: `${brand.name} | Software, Security & Digital Solutions`, template: `%s | ${brand.name}` },
+  description: brand.description,
+  keywords: ["software development Kenya", "business systems", "CCTV security solutions", "IT networking", "web development Nairobi", "digital marketing", "technology consultancy"],
+  authors: [{ name: brand.name }],
   openGraph: {
-    title: "Bridges Web Solutions | Web Design & Digital Systems",
-    description: "Transform your operations with custom software and intelligent web platforms built for Kenyan businesses and communities.",
-    url: "https://bridgeswebsolutions.top",
-    siteName: "Bridges Web Solutions",
+    title: `${brand.name} | Software, Security & Digital Solutions`,
+    description: brand.description,
+    url: brand.siteUrl,
+    siteName: brand.name,
     locale: "en_KE",
     type: "website",
+    images: [{ url: brand.banner, width: 2056, height: 765, alt: `${brand.name} — ${brand.tagline}` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bridges Web Solutions | Digital Systems & Web Design",
-    description: "We build custom digital systems, portals, and software infrastructure to automate your daily operations.",
-    creator: "@BridgesWebKE",
+    title: `${brand.name} | Software, Security & Digital Solutions`,
+    description: brand.description,
+    images: [brand.banner],
   },
   robots: {
     index: true,
@@ -55,7 +51,7 @@ export const metadata: Metadata = {
     yandex: 'YOUR_YANDEX_VERIFICATION_CODE', // Optional: Add Yandex verification code if needed
   },
   alternates: {
-    canonical: 'https://bridgeswebsolutions.top',
+    canonical: brand.siteUrl,
   },
 };
 
@@ -63,10 +59,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Bridges Web Solutions",
-  "url": "https://bridgeswebsolutions.top",
-  "logo": "https://bridgeswebsolutions.top/logo.png",
-  "description": "Professional web design and development services in Kenya, creating beautiful and functional websites for businesses of all sizes.",
+  "name": brand.name,
+  "url": brand.siteUrl,
+  "logo": `${brand.siteUrl}${brand.logo}`,
+  "description": brand.description,
+  "knowsAbout": ["Software Development", "Business Systems", "CCTV & Security Solutions", "IT & Networking", "Digital Marketing", "Technology Consultancy"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
@@ -77,15 +74,10 @@ const jsonLd = {
     "@type": "ContactPoint",
     "telephone": "+254104613770",
     "contactType": "customer service",
-    "email": "bridges.cybersec@gmail.com",
+    "email": brand.email,
     "availableLanguage": ["English", "Swahili"]
   },
-  "sameAs": [
-    "https://facebook.com/bridgeswebsolutions",
-    "https://twitter.com/bridgeswebsolutions",
-    "https://www.linkedin.com/company/bridgeswebsolutions",
-    "https://www.instagram.com/bridgeswebsolutions"
-  ]
+  "sameAs": [`https://wa.me/${brand.whatsapp}`]
 };
 
 // Add this type definition for JSON-LD
@@ -132,7 +124,7 @@ export default function RootLayout({
         />
         
         <JsonLd data={jsonLd} />
-        <link rel="canonical" href="https://bridgeswebsolutions.top" />
+        <link rel="canonical" href={brand.siteUrl} />
         <meta name="geo.region" content="KE-30" />
         <meta name="geo.placename" content="Nairobi" />
         <meta name="geo.position" content="-1.286389;36.817223" />
@@ -152,7 +144,7 @@ export default function RootLayout({
 
 
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

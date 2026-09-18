@@ -48,7 +48,7 @@ export default function ContactPage() {
       form.append('budget', formData.budget || 'Not specified');
       form.append('timeline', formData.timeline || 'Not specified');
       form.append('message', formData.message);
-      form.append('subject', `🚀 New Project Inquiry: ${formData.business} - ${formData.projectType}`);
+      form.append('subject', `New KWITZEL DIGITAL VENTURES Inquiry: ${formData.business} - ${formData.projectType}`);
       form.append('from_name', formData.name);
       
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -99,12 +99,12 @@ export default function ContactPage() {
               Let's Build Something Amazing Together
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Ready to transform your business with a professional website? Let's discuss your project.
+              Tell us what you are planning. Our team will help shape the right software, security, infrastructure or digital solution.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a 
-                href="https://wa.me/254104613770?text=Hi! I want to discuss building a professional website for my business."
+                href="https://wa.me/254104613770?text=Hello%20KWITZEL%20DIGITAL%20VENTURES%2C%20I%20would%20like%20to%20discuss%20a%20technology%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
@@ -271,10 +271,13 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors appearance-none bg-white"
                       >
                         <option value="">Select Project Type</option>
-                        <option value="new-website">New Website</option>
-                        <option value="website-redesign">Website Redesign</option>
-                        <option value="e-commerce">E-commerce Store</option>
-                        <option value="booking-system">Booking System</option>
+                        <option value="software-development">Software Development</option>
+                        <option value="business-system">Business System</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="security-cctv">CCTV &amp; Security Solution</option>
+                        <option value="it-networking">IT &amp; Networking</option>
+                        <option value="digital-marketing">Digital Marketing</option>
+                        <option value="technology-consultancy">Technology Consultancy</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -391,7 +394,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-gray-600">bridges.cybersec@gmail.com</div>
+                      <div className="text-gray-600">hello@kwitzeldigitalventures.co.ke</div>
                     </div>
                   </div>
                 </div>
@@ -422,10 +425,10 @@ export default function ContactPage() {
               <div className="bg-gray-900 text-white rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-4">Prefer to Chat?</h3>
                 <p className="text-gray-300 mb-4 text-sm">
-                  Get instant answers to your questions on WhatsApp. Most responses within 15 minutes during business hours.
+                  Get practical answers on WhatsApp. We respond during business hours and can arrange a focused consultation.
                 </p>
                 <a 
-                  href="https://wa.me/254104613770?text=Hi! I have some questions about building a website for my business."
+                  href="https://wa.me/254104613770?text=Hello%20KWITZEL%20DIGITAL%20VENTURES%2C%20I%20have%20a%20technology%20question."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors w-full flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"

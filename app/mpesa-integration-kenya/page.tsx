@@ -6,7 +6,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'M-Pesa API Integration Services in Kenya | Bridges Web Solutions',
+  title: 'M-Pesa API Integration Services in Kenya | KWITZEL DIGITAL VENTURES',
   description: 'Expert M-Pesa API developers in Kenya. We integrate Lipa na M-Pesa STK push, B2C, and B2B APIs seamlessly into your website, app, or digital system.',
   keywords: ['Mpesa integration Kenya', 'Lipa na Mpesa website', 'Mpesa API developers', 'STK push integration', 'Safaricom Daraja API'],
 };

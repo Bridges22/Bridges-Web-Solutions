@@ -71,7 +71,7 @@ Subject: Re: Your Web Development Inquiry - ${data.business}
 
 Hi ${data.name},
 
-Thank you for reaching out to Bridges Web Solutions! I received your inquiry about ${data.projectType} for ${data.business}.
+Thank you for reaching out to KWITZEL DIGITAL VENTURES! I received your inquiry about ${data.projectType} for ${data.business}.
 
 Here's what I understood from your message:
 - Project Type: ${data.projectType}
@@ -90,7 +90,7 @@ Would you be available for a quick call this week? I can also provide you with:
 
 You can reach me directly at:
 - WhatsApp: +254104613770
-- Email: bridges.cybersec@gmail.com
+- Email: hello@kwitzeldigitalventures.co.ke
 - Phone: +254104613770
 
 Looking forward to working with you!
@@ -98,7 +98,7 @@ Looking forward to working with you!
 Best regards,
 Bridges Mwashighadi
 Founder & Lead Developer
-Bridges Web Solutions
+KWITZEL DIGITAL VENTURES
     `.trim();
   }
 }

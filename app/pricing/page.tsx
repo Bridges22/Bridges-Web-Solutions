@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Bridges Web Solutions',
+  title: 'Pricing | KWITZEL DIGITAL VENTURES',
   description: 'Transparent pricing for web design, e-commerce, and digital systems in Kenya. No hidden costs. Choose the perfect package for your business needs.',
 };
 import Navigation from '../../components/Navigation';

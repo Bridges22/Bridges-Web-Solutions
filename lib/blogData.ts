@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Timeline</strong>: 4-8 weeks</li>
       </ul>
 
-      <h2>Why Choose Bridges Web Solutions?</h2>
+      <h2>Why Choose KWITZEL DIGITAL VENTURES?</h2>
       <p>As Kenya's leading web development agency, we offer:</p>
       <ul>
         <li><strong>Transparent pricing</strong> starting from KSh 45,000</li>
@@ -88,7 +88,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>Choosing the right web design company in Nairobi is crucial for your business success online. The best companies combine technical expertise with local market knowledge to create websites that drive real results.</p>
 
-      <p>Ready to build a professional website for your business? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 font-semibold">Contact Bridges Web Solutions</a> for a free consultation and discover how we can transform your online presence.</p>
+      <p>Ready to improve your organisation’s digital presence? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 font-semibold">Contact KWITZEL DIGITAL VENTURES</a> for a free consultation and discover how we can transform your operations.</p>
     `,
     category: 'Web Development',
     author: 'Bridges Ochieng',
@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Choosing the Right Partner</h2>
       <p>While cheap KSh 10,000 websites may seem attractive, they often lack security, speed, and local SEO, costing you potential customers in the long run. Invest in a professional website designed to convert visitors into clients.</p>
 
-      <p>Contact <a href="/contact" class="text-cyan-400 hover:text-cyan-300 font-semibold">Bridges Web Solutions</a> today to get a detailed project quote matching your exact requirements.</p>
+      <p>Contact <a href="/contact" class="text-cyan-400 hover:text-cyan-300 font-semibold">KWITZEL DIGITAL VENTURES</a> today to get a detailed project quote matching your exact requirements.</p>
     `,
     category: 'Pricing Guide',
     author: 'Bridges Ochieng',
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Security (SSL Certificate)</strong>: Ensures client billing details and data remain secure, building customer trust.</li>
       </ul>
 
-      <h2>How Bridges Web Solutions Can Help</h2>
+      <h2>How KWITZEL DIGITAL VENTURES Can Help</h2>
       <p>We build professional e-commerce systems with custom M-Pesa automated callbacks, product tracking, and clean admin dashboards to manage orders. <a href="/contact" class="text-cyan-400 hover:text-cyan-300 font-semibold">Get a quote today</a> to launch your shop!</p>
     `,
     category: 'E-commerce',
@@ -205,7 +205,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Mobile PageSpeed</strong>: Google prioritizes fast, mobile-friendly sites, especially in areas with varying mobile networks.</li>
       </ol>
 
-      <p>At Bridges Web Solutions, SEO is built into every website from day one. Contact us to learn how we can help you rank higher!</p>
+      <p>At KWITZEL DIGITAL VENTURES, SEO is built into every web platform from day one. Contact us to learn how we can help you rank higher!</p>
     `,
     category: 'SEO Tips',
     author: 'Bridges Ochieng',

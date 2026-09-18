@@ -8,20 +8,20 @@ export default function WhatsAppButton() {
 
   const quickMessages = [
     {
-      text: "I want a website for my business",
-      message: "Hi! I want a professional website for my business. Can we discuss the options?"
+      text: "Software or business system",
+      message: "Hello KWITZEL DIGITAL VENTURES, I need a software or business system. Can we discuss the options?"
     },
     {
-      text: "Free consultation",
-      message: "Hi! I'd like to schedule a free consultation to discuss my website needs."
+      text: "Security assessment",
+      message: "Hello KWITZEL DIGITAL VENTURES, I would like to discuss a CCTV or security assessment."
     },
     {
-      text: "View pricing",
-      message: "Hi! Can you send me pricing information for website development?"
+      text: "Request a consultation",
+      message: "Hello KWITZEL DIGITAL VENTURES, I would like to arrange a technology consultation."
     },
     {
-      text: "See portfolio",
-      message: "Hi! I'd like to see more examples of your work and discuss my project."
+      text: "Discuss digital growth",
+      message: "Hello KWITZEL DIGITAL VENTURES, I would like to discuss digital growth and marketing services."
     }
   ];
 
@@ -104,7 +104,7 @@ export default function WhatsAppButton() {
         </button>
 
         <a
-          href="https://wa.me/254104613770?text=Hi! I'm interested in building a professional website for my business."
+          href="https://wa.me/254104613770?text=Hello%20KWITZEL%20DIGITAL%20VENTURES%2C%20I%20would%20like%20to%20discuss%20a%20technology%20project."
           target="_blank"
           rel="noopener noreferrer"
           className="group bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-400 hover:to-emerald-300 text-white w-18 h-18 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer animate-pulse"

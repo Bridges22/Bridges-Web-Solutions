@@ -6,7 +6,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'E-commerce Website Development in Kenya | Bridges Web Solutions',
+  title: 'E-commerce Website Development in Kenya | KWITZEL DIGITAL VENTURES',
   description: 'Launch your online store with Kenya\'s top e-commerce developers. We build secure, fast online shops with M-Pesa integration and inventory management.',
   keywords: ['ecommerce website Kenya', 'online store developers Nairobi', 'M-Pesa integrated ecommerce', 'sell online in Kenya'],
 };

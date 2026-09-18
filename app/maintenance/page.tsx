@@ -5,7 +5,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Maintenance & Support | Bridges Web Solutions',
+  title: 'Maintenance & Support | KWITZEL DIGITAL VENTURES',
   description: 'Reliable, 24/7 maintenance and support for your digital systems, websites, and infrastructure in Kenya.',
 };
 

@@ -27,8 +27,8 @@ export default function BlogPage() {
         title="Web Development Blog Kenya - Expert Tips & Insights"
         description="Get expert web development insights, SEO tips, and digital marketing strategies for Kenyan businesses. Learn from Kenya's leading web development agency."
         keywords="web development blog Kenya, SEO tips Kenya, website design Nairobi, digital marketing Kenya, web development insights"
-        canonicalUrl="https://your-domain.com/blog"
-        ogImage="https://your-domain.com/blog-og-image.jpg"
+        canonicalUrl="https://kwitzeldigitalventures.co.ke/blog"
+        ogImage="https://kwitzeldigitalventures.co.ke/Pictures/kwitzel%20digital%20ventures%20banner.png"
         ogType="website"
       />
       <Navigation />

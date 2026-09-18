@@ -4,7 +4,7 @@ import WhatsAppButton from '../../components/WhatsAppButton';
 import LiveChat from '../../components/LiveChat';
 
 export const metadata = {
-  title: 'Digital Systems & Solutions | Bridges Web Solutions',
+  title: 'Digital Systems & Solutions | KWITZEL DIGITAL VENTURES',
   description: 'Explore our custom digital systems, e-commerce platforms, school portals, and business automation solutions designed for Kenyan enterprises.',
 };
 

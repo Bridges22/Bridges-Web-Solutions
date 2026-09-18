@@ -10,24 +10,30 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WhatsAppButton';
 import LiveChat from '../components/LiveChat';
+import SolutionConfigurator from '../components/SolutionConfigurator';
+import CommandPalette from '../components/CommandPalette';
+import BrandSignal from '../components/BrandSignal';
+import CursorGlow from '../components/CursorGlow';
 
 export default function Home() {
   return (
     <>
       <Navigation />
+      <CursorGlow />
       <main className="min-h-screen overflow-x-hidden w-full">
         <Hero />
+        <BrandSignal />
         <ClientLogos />
         <DigitalSystems />
         <NewServices />
+        <SolutionConfigurator />
         <FeaturedProjects />
         <Testimonials />
         <CallToAction />
         <Footer />
-        <WhatsAppButton />
         <LiveChat />
+        <CommandPalette />
       </main>
     </>
   );

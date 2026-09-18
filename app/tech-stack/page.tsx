@@ -4,7 +4,7 @@ import WhatsAppButton from '../../components/WhatsAppButton';
 import LiveChat from '../../components/LiveChat';
 
 export const metadata = {
-  title: 'Our Tech Stack | Bridges Web Solutions',
+  title: 'Technology Capabilities | KWITZEL DIGITAL VENTURES',
   description: 'Explore the modern, scalable, and secure technologies we use to build digital systems for Kenyan businesses.',
 };
 

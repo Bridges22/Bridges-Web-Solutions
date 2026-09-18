@@ -6,7 +6,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Web Design Company in Mombasa | Bridges Web Solutions',
+  title: 'Web Design in Mombasa | KWITZEL DIGITAL VENTURES',
   description: 'Top-rated web design agency in Mombasa. We build professional, fast, and SEO-optimized websites for tourism, logistics, and coastal businesses in Kenya.',
   keywords: ['web design Mombasa', 'website developers Mombasa', 'coast web designers', 'digital systems Kenya', 'ecommerce websites Mombasa'],
 };

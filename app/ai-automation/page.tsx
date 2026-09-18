@@ -5,7 +5,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'AI & Automation Solutions | Bridges Web Solutions',
+  title: 'AI & Automation Solutions | KWITZEL DIGITAL VENTURES',
   description: 'Automate your business processes with AI chatbots, intelligent workflows, and data processing solutions in Kenya.',
 };
 

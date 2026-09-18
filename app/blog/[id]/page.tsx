@@ -46,7 +46,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
         title={post ? post.title : "Blog Post Not Found"}
         description={post ? post.excerpt : "Blog post not found"}
         keywords={post ? post.tags.join(', ') : ""}
-        canonicalUrl={`https://your-domain.com/blog/${postId}`}
+        canonicalUrl={`https://kwitzeldigitalventures.co.ke/blog/${postId}`}
         ogImage={post ? post.image : ""}
         ogType="article"
         publishedTime={post ? new Date(post.date).toISOString() : ""}

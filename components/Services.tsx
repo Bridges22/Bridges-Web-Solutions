@@ -4,54 +4,54 @@
 export default function Services() {
   const services = [
     {
-      icon: 'ri-smartphone-line',
-      title: 'Mobile Websites',
-      description: 'Responsive designs that look perfect on every device. Your customers browse on mobile - your site should too.',
-      link: '/services#mobile-websites'
+      icon: 'ri-code-s-slash-line',
+      title: 'Software Development',
+      description: 'Purpose-built applications and portals that simplify workflows and support growth.',
+      link: '/services#software-development'
     },
     {
-      icon: 'ri-flashlight-line',
-      title: 'Fast Loading',
-      description: 'Lightning-fast websites that load in under 3 seconds. Speed equals sales - every second counts.',
-      link: '/services#fast-loading'
+      icon: 'ri-dashboard-3-line',
+      title: 'Business Systems',
+      description: 'Reliable systems for operations, reporting, payments, bookings and client management.',
+      link: '/services#business-systems'
     },
     {
       icon: 'ri-global-line',
-      title: 'Google Visibility',
-      description: 'SEO-optimized to rank higher in search results. Be found when customers are looking for you.',
-      link: '/services#seo'
-    },
-    {
-      icon: 'ri-shopping-cart-line',
-      title: 'E-commerce Ready',
-      description: 'Online stores that convert browsers into buyers. Sell your products 24/7 with secure checkout.',
-      link: '/services#ecommerce'
-    },
-    {
-      icon: 'ri-share-line',
-      title: 'Social Media Management',
-      description: 'Grow your brand online with powerful social media management. We handle your presence while you focus on business.',
-      link: '/social-media-management',
-      isNew: true
+      title: 'Web Development',
+      description: 'High-performing websites and e-commerce platforms that represent your organisation well.',
+      link: '/services#web-development'
     },
     {
       icon: 'ri-camera-lens-line',
       title: 'CCTV & Security',
-      description: 'Protect your business with reliable CCTV and smart surveillance systems. Professional installation and support.',
-      link: '/cctv-security-systems',
+      description: 'Professional surveillance, access control and smart monitoring solutions.',
+      link: '/services#security'
+    },
+    {
+      icon: 'ri-share-line',
+      title: 'Digital Marketing',
+      description: 'Clear, data-informed digital campaigns that build awareness and generate qualified leads.',
+      link: '/social-media-management',
       isNew: true
     },
     {
-      icon: 'ri-customer-service-2-line',
-      title: '24/7 Support',
-      description: 'Ongoing maintenance and updates included. Your website stays fresh, secure, and running smoothly.',
-      link: '/services#support'
+      icon: 'ri-router-line',
+      title: 'IT & Networking',
+      description: 'Stable, secure network infrastructure designed for dependable day-to-day operations.',
+      link: '/services#networking',
+      isNew: true
+    },
+    {
+      icon: 'ri-lightbulb-line',
+      title: 'Technology Consultancy',
+      description: 'Practical guidance to help you prioritise technology investments with confidence.',
+      link: '/services#consultancy'
     },
     {
       icon: 'ri-bar-chart-line',
-      title: 'Analytics & Insights',
-      description: 'Track your success with detailed analytics. Know your customers and grow your business smarter.',
-      link: '/services#analytics'
+      title: 'Support & Maintenance',
+      description: 'Ongoing support, optimisation and upgrades to keep your technology dependable.',
+      link: '/services#support'
     }
   ];
 
@@ -65,14 +65,14 @@ export default function Services() {
               textShadow: '0 0 30px rgba(255, 255, 255, 0.3)'
             }}
           >
-            Services That Drive 
+            Technology Services for
             <span 
               className="text-cyan-400 ml-3"
               style={{
                 textShadow: '0 0 30px rgba(34, 211, 238, 0.8)'
               }}
             >
-              Results
+              Real Operations
             </span>
           </h2>
           <p 
@@ -81,7 +81,7 @@ export default function Services() {
               textShadow: '0 0 10px rgba(255, 255, 255, 0.1)'
             }}
           >
-            Everything your business needs to succeed online. Professional, reliable, and designed to grow with you.
+            Secure, scalable technology services for businesses, schools, organisations and corporate teams.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function Services() {
 
         <div className="text-center mt-16">
           <a 
-            href="https://wa.me/254104613770?text=Hi! I'd like to know more about your web development services."
+            href="https://wa.me/254104613770?text=Hello%20KWITZEL%20DIGITAL%20VENTURES%2C%20I%20would%20like%20to%20know%20more%20about%20your%20technology%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="group relative bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-400 hover:to-emerald-300 text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer transform hover:-translate-y-1"
@@ -163,7 +163,7 @@ export default function Services() {
           >
             <span className="relative z-10 flex items-center gap-2">
               <i className="ri-whatsapp-line text-xl"></i>
-              Get Started Today
+              Talk to an Expert
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-emerald-200 rounded-full blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
           </a>

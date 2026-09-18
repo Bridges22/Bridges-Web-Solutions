@@ -87,7 +87,7 @@ export default function FAQPage() {
                 <h3 className="text-xl font-bold text-white mb-4">Email Support</h3>
                 <p className="text-gray-400 mb-6">Send us detailed questions and we'll respond with comprehensive answers.</p>
                 <a
-                  href="mailto:bridges.cybersec@gmail.com"
+                  href="mailto:hello@kwitzeldigitalventures.co.ke"
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
                 >
                   <i className="ri-send-plane-line"></i>

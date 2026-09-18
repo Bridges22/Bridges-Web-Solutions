@@ -6,7 +6,7 @@ import LiveChat from '../../components/LiveChat';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Best Web Design Company in Nairobi | Bridges Web Solutions',
+  title: 'Web Design in Nairobi | KWITZEL DIGITAL VENTURES',
   description: 'Top-rated web design and digital systems agency in Nairobi, Kenya. We build professional, SEO-optimized websites and custom software for local businesses.',
   keywords: ['web design Nairobi', 'website developers in Nairobi', 'Nairobi web designers', 'digital systems Kenya', 'ecommerce websites Nairobi'],
 };

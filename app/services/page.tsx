@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Solutions & Services | Bridges Web Solutions',
-  description: 'Explore our comprehensive web design, digital systems, and automation solutions. We build technology that powers Kenyan businesses.',
+  title: 'Technology Solutions & Services | KWITZEL DIGITAL VENTURES',
+  description: 'Explore software development, business systems, CCTV security, networking and digital growth solutions for Kenyan organisations.',
 };
 import Navigation from '../../components/Navigation';
 import Services from '../../components/Services';
@@ -20,13 +20,13 @@ export default function ServicesPage() {
           <div className="container mx-auto px-6 text-center">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Professional{' '}
+                Integrated{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Web Services
+                  Technology Services
                 </span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                From stunning websites to powerful e-commerce platforms, we deliver comprehensive digital solutions that transform your business and drive real results.
+                From business software and web platforms to CCTV, networking and digital marketing, we deliver technology solutions that keep organisations operating with confidence.
               </p>
               
               {/* Key Stats */}
@@ -85,14 +85,14 @@ export default function ServicesPage() {
                 {
                   step: '03',
                   title: 'Development',
-                  description: 'Build your website using modern technologies with regular progress updates.',
+                  description: 'Build and configure your solution using secure, maintainable technology with regular progress updates.',
                   icon: 'ri-code-line',
                   color: 'from-green-500 to-emerald-500'
                 },
                 {
                   step: '04',
                   title: 'Launch',
-                  description: 'Deploy your website and provide training, support, and ongoing maintenance.',
+                  description: 'Deploy your solution and provide training, support and ongoing maintenance.',
                   icon: 'ri-rocket-line',
                   color: 'from-orange-500 to-red-500'
                 }
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We use cutting-edge technologies to build fast, secure, and scalable websites.
+                We use proven technologies to build secure, scalable digital systems and web platforms.
               </p>
             </div>
 

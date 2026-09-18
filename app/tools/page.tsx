@@ -14,10 +14,10 @@ export default function ToolsPage() {
   return (
     <>
       <SEOHead
-        title="Free Website Tools - Project Calculator, Speed Test & Design Studio | Bridges Web Solutions"
+        title="Technology Planning Tools | KWITZEL DIGITAL VENTURES"
         description="Try our free website tools: Project cost calculator, website speed test, design customizer, and performance showcase. Get instant quotes and see your website potential."
         keywords="website calculator, speed test, design tool, website cost, performance test, Kenya web tools"
-        canonicalUrl="https://your-domain.com/tools"
+        canonicalUrl="https://kwitzeldigitalventures.co.ke/tools"
       />
       <Navigation />
       <main className="min-h-screen">

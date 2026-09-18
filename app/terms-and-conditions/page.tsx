@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Terms and Conditions | Bridges Web Solutions',
-  description: 'Read the terms and conditions for using Bridges Web Solutions website and services. Learn about our policies, intellectual property, and user responsibilities.',
+  title: 'Terms and Conditions | KWITZEL DIGITAL VENTURES',
+  description: 'Read the terms and conditions for using KWITZEL DIGITAL VENTURES services and website.',
 };
 
 export default function TermsAndConditions() {
@@ -31,10 +31,10 @@ export default function TermsAndConditions() {
         <div className="bg-white rounded-lg shadow-md p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms and Conditions</h1>
           <p className="text-gray-600 mb-2">Effective Date: October 7, 2025</p>
-          <p className="text-gray-600 mb-8">Website: <Link href="https://www.bridgeswebsolutions.top" className="text-blue-600 hover:underline">www.bridgeswebsolutions.top</Link></p>
+          <p className="text-gray-600 mb-8">Website: <Link href="https://kwitzeldigitalventures.co.ke" className="text-blue-600 hover:underline">kwitzeldigitalventures.co.ke</Link></p>
           
           <p className="mb-6 text-gray-700">
-            Welcome to Bridges Web Solutions. By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our website.
+            Welcome to KWITZEL DIGITAL VENTURES. By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our website.
           </p>
 
           <section className="mb-8">
@@ -47,7 +47,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">2. Services</h2>
             <p className="text-gray-700">
-              Bridges Web Solutions provides web development, design, hosting setup, and related digital services. All services are subject to availability and may change at any time without notice.
+              KWITZEL DIGITAL VENTURES provides software development, security, networking, digital systems, web development and related digital services. All services are subject to availability and may change at any time without notice.
             </p>
           </section>
 
@@ -61,7 +61,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">4. Intellectual Property</h2>
             <p className="text-gray-700">
-              All website content, including text, graphics, logos, and code, is owned by Bridges Web Solutions or its partners. You may not reproduce, distribute, or use any content without written permission.
+              All website content, including text, graphics, logos, and code, is owned by KWITZEL DIGITAL VENTURES or its partners. You may not reproduce, distribute, or use any content without written permission.
             </p>
           </section>
 
@@ -85,14 +85,14 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">7. Disclaimer</h2>
             <p className="text-gray-700">
-              All content and services are provided "as is." Bridges Web Solutions makes no warranties, expressed or implied, regarding accuracy, reliability, or suitability for any purpose.
+              All content and services are provided "as is." KWITZEL DIGITAL VENTURES makes no warranties, expressed or implied, regarding accuracy, reliability, or suitability for any purpose.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">8. Limitation of Liability</h2>
             <p className="text-gray-700">
-              Bridges Web Solutions shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services.
+              KWITZEL DIGITAL VENTURES shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services.
             </p>
           </section>
 
@@ -114,7 +114,7 @@ export default function TermsAndConditions() {
             <h2 className="text-xl font-semibold text-gray-800 mb-4">11. Contact Information</h2>
             <p className="text-gray-700">If you have any questions about these Terms, please contact us:</p>
             <address className="not-italic mt-2 text-gray-700">
-              <p>Email: <Link href="mailto:bridges.cybersec@gmail.com" className="text-blue-600 hover:underline">bridges.cybersec@gmail.com</Link></p>
+              <p>Email: <Link href="mailto:hello@kwitzeldigitalventures.co.ke" className="text-blue-600 hover:underline">hello@kwitzeldigitalventures.co.ke</Link></p>
               <p>Phone: <Link href="tel:+254705784274" className="text-blue-600 hover:underline">+254705784274</Link></p>
             </address>
           </section>

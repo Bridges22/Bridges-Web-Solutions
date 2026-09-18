@@ -205,7 +205,7 @@ export default function FAQ() {
                 Chat on WhatsApp
               </a>
               <a
-                href="mailto:bridges.cybersec@gmail.com"
+                href="mailto:hello@kwitzeldigitalventures.co.ke"
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               >
                 <i className="ri-mail-line text-lg"></i>
